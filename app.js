@@ -9,9 +9,7 @@ const CONFIG = {
 };
 
 const productsData = [
-    // ==========================================
     // 1. KATEGORI: LIFT PENUMPANG (PASSENGER ELEVATOR)
-    // ==========================================
     {
         id: "lp1",
         title: "Mitsubishi NEXIEZ-MR Passenger Elevator (8 Person / 630 Kg)",
@@ -21,7 +19,7 @@ const productsData = [
         stockStatus: "Indent 14-21 Hari",
         troubleCode: "",
         image: "img/Lp1.jpg",
-        specs: { speed: "1.0 - 1.75 m/s", cabin: "Hairline Stainless Steel SUS304" }
+        specs: { speed: "1.0 - 1.75 m/s", cabin: "Hairline Stainless SUS304" }
     },
     {
         id: "lp2",
@@ -32,7 +30,7 @@ const productsData = [
         stockStatus: "Indent 14-21 Hari",
         troubleCode: "",
         image: "img/Lp2.jpg",
-        specs: { speed: "1.6 m/s", drive: "RegenDrive Energy Saving Flat Belt" }
+        specs: { speed: "1.6 m/s", drive: "RegenDrive Flat Belt" }
     },
     {
         id: "lp3",
@@ -43,12 +41,10 @@ const productsData = [
         stockStatus: "Indent 14 Hari",
         troubleCode: "",
         image: "img/Lp3.jpg",
-        specs: { speed: "1.0 m/s", door: "Telescopic Automatic Center-Opening" }
+        specs: { speed: "1.0 m/s", door: "Telescopic Center-Opening" }
     },
 
-    // ==========================================
     // 2. KATEGORI: LIFT BARANG (FREIGHT ELEVATOR)
-    // ==========================================
     {
         id: "lb1",
         title: "Kone TranSys Heavy Duty Industrial Freight Elevator (2000 Kg)",
@@ -58,7 +54,7 @@ const productsData = [
         stockStatus: "Indent 14-30 Hari",
         troubleCode: "",
         image: "img/Lb.jpg",
-        specs: { capacity: "2000 Kg / 2 Ton", floorProtection: "Checkered Steel Plate 4mm" }
+        specs: { capacity: "2000 Kg / 2 Ton", floorProtection: "Checkered Steel 4mm" }
     },
     {
         id: "lb2",
@@ -69,12 +65,10 @@ const productsData = [
         stockStatus: "Indent 30 Hari",
         troubleCode: "",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCa-KEx0XNfw5ACMBcMuZWGTW0zk0iGlMmpf-KxZF2FJO6bwGgF8vs5c&s=10",
-        specs: { capacity: "3000 Kg / 3 Ton", door: "2-Panel Vertical Bi-Parting Door" }
+        specs: { capacity: "3000 Kg / 3 Ton", door: "2-Panel Vertical Bi-Parting" }
     },
 
-    // ==========================================
     // 3. KATEGORI: LIFT PASIEN / RUMAH SAKIT (BED ELEVATOR)
-    // ==========================================
     {
         id: "lps1",
         title: "Mitsubishi Hospital Bed Elevator Cleanroom Series (1600 Kg)",
@@ -84,7 +78,7 @@ const productsData = [
         stockStatus: "Indent 14-21 Hari",
         troubleCode: "",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_g6sUlAU9rrLlbydWMY6B5F7UY2C68zSKTerZCVFYxZhpGS92_j1eDG4&s=10",
-        specs: { capacity: "Stretcher Bed + 8 Personnel", feature: "Antibacterial Wall & Smooth Start" }
+        specs: { capacity: "Stretcher Bed + 8 Personnel", feature: "Antibacterial Wall" }
     },
     {
         id: "lps2",
@@ -95,12 +89,10 @@ const productsData = [
         stockStatus: "Indent 21 Hari",
         troubleCode: "",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqJqNyMnhk_tHGtfkYm4bfYoCzkn349eGGz9H9ShSl51BjUq49ClGhl9-B&s=10",
-        specs: { capacity: "1600 Kg Standard Kemenkes", door: "Extended Hold Button & Priority Recall" }
+        specs: { capacity: "1600 Kg Standar Kemenkes", door: "Extended Hold Button" }
     },
 
-    // ==========================================
     // 4. KATEGORI: ESKALATOR (ESCALATOR & MOVING WALK)
-    // ==========================================
     {
         id: "esk1",
         title: "Mitsubishi Commercial Escalator J-Type 30 Degree (Width 1000 mm)",
@@ -110,7 +102,7 @@ const productsData = [
         stockStatus: "Indent 21 Hari",
         troubleCode: "",
         image: "https://mitsubishi-shanghai.com/upload/3934/o/2-2-1-advantages-05.jpg",
-        specs: { stepWidth: "1000 mm", speed: "0.5 m/s Inverter Energy Saver" }
+        specs: { stepWidth: "1000 mm", speed: "0.5 m/s Inverter" }
     },
     {
         id: "esk2",
@@ -121,12 +113,10 @@ const productsData = [
         stockStatus: "Indent 21 Hari",
         troubleCode: "",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcFzRTM0gz6rWdxRz0QIl95u50O5nNi3geFFDpVHZvSnhM1jIaVjDwwdM&s=10",
-        specs: { stepWidth: "800 mm", handrail: "High-Durability Synthetic Rubber" }
+        specs: { stepWidth: "800 mm", handrail: "Synthetic Rubber" }
     },
 
-    // ==========================================
-    // 5. KATEGORI: SPAREPART & KOMPONEN TEKNIS (SPAREPART)
-    // ==========================================
+    // 5. KATEGORI: SPAREPART & KOMPONEN TEKNIS
     {
         id: "sp1",
         title: "Monarch NICE3000+ Integrated Elevator Controller VVVF Inverter",
@@ -136,7 +126,7 @@ const productsData = [
         stockStatus: "Ready Stock",
         troubleCode: "ERR-02",
         image: "https://image.made-in-china.com/202f0j00DCwRezEhhIkb/Monarch-integrated-drive-and-controller-NICE3000-Monarch-elevator-inverter.webp",
-        specs: { power: "7.5 kW - 22 kW 380V", compatibility: "Universal Synchronous/Async Motor" }
+        specs: { power: "7.5 kW - 22 kW 380V", compatibility: "Universal Sync/Async" }
     },
     {
         id: "sp2",
@@ -147,7 +137,7 @@ const productsData = [
         stockStatus: "Ready Stock",
         troubleCode: "",
         image: "https://parts.kone.com/product-images/large/KM51439551-PIC000000000269807",
-        specs: { diameter: "750 mm / 5 Grooves", material: "Cast Iron FC-25 High Friction" }
+        specs: { diameter: "750 mm / 5 Grooves", material: "Cast Iron FC-25" }
     },
     {
         id: "sp3",
@@ -158,7 +148,7 @@ const productsData = [
         stockStatus: "Ready Stock",
         troubleCode: "E-42",
         image: "https://www.davenportliftcontrol.com/images/product-zoom/6010264/smart--door-lock-compl--links-central.jpg",
-        specs: { type: "Electromechanical Safety Contacts", cert: "Sertifikasi Standar K3 Depnaker" }
+        specs: { type: "Electromechanical Safety", cert: "K3 Depnaker Approved" }
     },
     {
         id: "sp4",
@@ -169,7 +159,7 @@ const productsData = [
         stockStatus: "Ready Stock",
         troubleCode: "",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2bJawHEWibgcFcAIlwDcAkszMQsafg3R_jAIf5o-Ttl5_e-K563b5Bo08&s=10",
-        specs: { pitch: "67.733 mm T67", material: "Hardened Carbon Steel & Polyurethane Roller" }
+        specs: { pitch: "67.733 mm T67", material: "Hardened Carbon Steel" }
     },
     {
         id: "sp5",
@@ -180,7 +170,7 @@ const productsData = [
         stockStatus: "Indent 2-3 Hari",
         troubleCode: "ERR-33",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX1takYI8OkCl81u1Fk-k26dDOk9y3VtiulQkXAJ3h1kLgYDamJhbmgMlC&s=10",
-        specs: { ratedSpeed: "1.0 - 2.5 m/s", action: "Mechanical Trip & Switch Cut-off" }
+        specs: { ratedSpeed: "1.0 - 2.5 m/s", action: "Mechanical Trip & Cut-off" }
     }
 ];
 
@@ -244,6 +234,21 @@ document.addEventListener('DOMContentLoaded', () => {
     calculateEstimate();
 });
 
+// Fungsi Toggle Hamburger Menu Mobile
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    
+    if (mobileMenu && hamburgerIcon) {
+        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+            hamburgerIcon.className = 'ri-menu-3-line';
+        } else {
+            hamburgerIcon.className = 'ri-close-line';
+        }
+    }
+}
+
 function checkSavedSession() {
     const saved = localStorage.getItem('antar_nusa_auth');
     if (saved) {
@@ -261,7 +266,7 @@ function updateAuthUI() {
         if (portalBtnText) portalBtnText.innerText = authState.userName.split(' ')[0];
         if (portalIndicator) portalIndicator.classList.remove('hidden');
     } else {
-        if (portalBtnText) portalBtnText.innerText = 'Portal Client';
+        if (portalBtnText) portalBtnText.innerText = 'Portal';
         if (portalIndicator) portalIndicator.classList.add('hidden');
     }
 }
@@ -274,55 +279,49 @@ function renderProducts(items) {
     if (countLabel) countLabel.innerText = `Menampilkan ${items.length} produk & suku cadang`;
 
     if (items.length === 0) {
-        grid.innerHTML = `<div class="col-span-3 text-center py-10 text-xs text-slate-400 font-semibold glass-card rounded-2xl border border-slate-800 shadow-xl">Produk atau kode error tidak ditemukan.</div>`;
+        grid.innerHTML = `<div class="col-span-2 lg:col-span-3 text-center py-10 text-xs text-slate-400 font-semibold glass-card rounded-2xl border border-slate-800 shadow-xl">Produk atau kode error tidak ditemukan.</div>`;
         return;
     }
 
     grid.innerHTML = items.map(p => {
         const specKey1 = Object.keys(p.specs)[0];
         const specVal1 = p.specs[specKey1];
-        const specKey2 = Object.keys(p.specs)[1];
-        const specVal2 = p.specs[specKey2];
 
         return `
-            <div class="glass-card rounded-2xl overflow-hidden border border-slate-800/80 flex flex-col justify-between shadow-2xl hover:border-amber-500/50 transition-all group">
+            <div class="glass-card rounded-xl sm:rounded-2xl overflow-hidden border border-slate-800/80 flex flex-col justify-between shadow-xl hover:border-amber-500/50 transition-all group">
                 <div>
-                    <div class="relative h-52 bg-slate-950 overflow-hidden">
+                    <div class="relative h-32 sm:h-52 bg-slate-950 overflow-hidden">
                         <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 left-3 ${p.stockStatus === 'Ready Stock' ? 'bg-emerald-600' : 'bg-amber-600'} text-white text-[10px] font-extrabold px-2.5 py-1 rounded-lg shadow-md">
+                        <span class="absolute top-2 left-2 sm:top-3 sm:left-3 ${p.stockStatus === 'Ready Stock' ? 'bg-emerald-600' : 'bg-amber-600'} text-white text-[9px] sm:text-[10px] font-extrabold px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg shadow-md">
                             ${p.stockStatus}
                         </span>
-                        <button onclick="toggleBookmark('${p.id}')" class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-slate-950/80 text-slate-300 flex items-center justify-center hover:text-amber-500 transition-colors">
-                            <i class="ri-bookmark-line text-sm"></i>
+                        <button onclick="toggleBookmark('${p.id}')" class="absolute top-2 right-2 sm:top-3 sm:right-3 w-6 h-6 sm:w-8 sm:h-8 rounded-md sm:rounded-lg bg-slate-950/80 text-slate-300 flex items-center justify-center hover:text-amber-500 transition-colors">
+                            <i class="ri-bookmark-line text-xs sm:text-sm"></i>
                         </button>
                         ${p.troubleCode ? `
-                            <span class="absolute bottom-3 right-3 bg-red-600 text-white text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow-md">
+                            <span class="absolute bottom-2 right-2 bg-red-600 text-white text-[9px] font-mono font-bold px-1.5 py-0.5 rounded shadow-md">
                                 ${p.troubleCode}
                             </span>
                         ` : ''}
                     </div>
-                    <div class="p-5 space-y-2.5">
+                    <div class="p-3 sm:p-5 space-y-1.5 sm:space-y-2.5">
                         <div class="flex items-center justify-between">
-                            <span class="text-[10px] font-mono font-bold text-amber-500 uppercase">OEM: ${p.oem}</span>
-                            <span class="text-[10px] font-bold text-slate-400 bg-slate-900 px-2 py-0.5 rounded">${p.brand}</span>
+                            <span class="text-[9px] sm:text-[10px] font-mono font-bold text-amber-500 uppercase truncate max-w-[65%]">OEM: ${p.oem}</span>
+                            <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 bg-slate-900 px-1.5 py-0.5 rounded">${p.brand}</span>
                         </div>
-                        <h3 class="text-sm font-extrabold text-white line-clamp-1" title="${p.title}">${p.title}</h3>
-                        <div class="bg-slate-950/70 p-3 rounded-xl border border-slate-800 space-y-1.5 text-[11px]">
+                        <h3 class="text-xs sm:text-sm font-extrabold text-white line-clamp-2 leading-tight" title="${p.title}">${p.title}</h3>
+                        <div class="bg-slate-950/70 p-2 sm:p-3 rounded-lg sm:rounded-xl border border-slate-800 space-y-1 text-[10px] sm:text-[11px]">
                             <div class="flex justify-between text-slate-400">
-                                <span class="capitalize">${specKey1}:</span>
-                                <span class="text-slate-200 font-bold">${specVal1}</span>
-                            </div>
-                            <div class="flex justify-between text-slate-400">
-                                <span class="capitalize">${specKey2}:</span>
-                                <span class="text-slate-200 font-bold">${specVal2}</span>
+                                <span class="capitalize truncate">${specKey1}:</span>
+                                <span class="text-slate-200 font-bold truncate ml-1">${specVal1}</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="p-5 pt-0 grid grid-cols-2 gap-2.5">
-                    <button onclick="showProductDetail('${p.id}')" class="py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-bold text-xs border border-slate-700/80 transition-all">Detail</button>
-                    <button onclick="askProductDirect('${p.title}', '${p.oem}', '${p.image}')" class="py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs flex items-center justify-center gap-1.5 shadow-md transition-all">
-                        <i class="ri-whatsapp-line text-base"></i> Tanyakan
+                <div class="p-3 sm:p-5 pt-0 grid grid-cols-2 gap-1.5 sm:gap-2.5">
+                    <button onclick="showProductDetail('${p.id}')" class="py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-bold text-[11px] sm:text-xs border border-slate-700/80 transition-all">Detail</button>
+                    <button onclick="askProductDirect('${p.title}', '${p.oem}', '${p.image}')" class="py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-[11px] sm:text-xs flex items-center justify-center gap-1 shadow-md transition-all">
+                        <i class="ri-whatsapp-line text-sm"></i> Tanya
                     </button>
                 </div>
             </div>
@@ -390,10 +389,7 @@ function showProductDetail(productId) {
     document.getElementById('product-detail-modal')?.classList.remove('hidden');
 }
 
-function closeProductDetailModal() {
-    document.getElementById('product-detail-modal')?.classList.add('hidden');
-}
-
+function closeProductDetailModal() { document.getElementById('product-detail-modal')?.classList.add('hidden'); }
 function openEmergencyModal() { document.getElementById('emergency-modal')?.classList.remove('hidden'); }
 function closeEmergencyModal() { document.getElementById('emergency-modal')?.classList.add('hidden'); }
 function triggerEmergencyCall() { window.location.href = `tel:${CONFIG.EMERGENCY_PHONE}`; }
@@ -453,8 +449,6 @@ function switchPortalTab(tab) {
         loginForm?.classList.add('hidden');
     }
 }
-
-// --- FUNGSI VALIDASI REGISTRASI & LOGIN ---
 
 function getRegisteredUsers() {
     const users = localStorage.getItem('antar_nusa_registered_users');
@@ -673,9 +667,7 @@ function triggerWaConsultation() {
     });
 }
 
-function openMapsLocation() {
-    window.open(CONFIG.MAPS_URL, '_blank');
-}
+function openMapsLocation() { window.open(CONFIG.MAPS_URL, '_blank'); }
 
 function quickSelectService(serviceName) {
     requireAuth(() => {
