@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/* Custom Scrollbar Rules */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Glassmorphism Card & Header Styling */
+.glass-card {
+    background: rgba(11, 19, 41, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-nav {
+    background: rgba(7, 12, 27, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/* Custom Button Active States */
+.brand-pill.active-brand-pill {
+    background-color: #f59e0b !important;
+    color: #040711 !important;
+    border-color: #f59e0b !important;
+}
+
+.cat-pill.active-cat-pill {
+    background-color: #f59e0b !important;
+    color: #040711 !important;
+    border-color: #f59e0b !important;
+}
+
+.b2b-pill.active-b2b-pill {
+    background-color: #f59e0b !important;
+    color: #040711 !important;
+    border-color: #f59e0b !important;
+}
+
+/* Toast Slide Animation */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.toast-animate {
+    animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Fix anchor scroll offset untuk navbar sticky */
+section {
+    scroll-margin-top: 70px;
+}
