@@ -3,13 +3,13 @@
  */
 
 const CONFIG = {
-    WA_PHONE: "6281234567890",
-    EMERGENCY_PHONE: "081234567890",
+    WA_PHONE: "62881024027021",
+    EMERGENCY_PHONE: "0881024027021",
     MAPS_URL: "https://maps.google.com/?q=Jl.+Bendungan+Jago+No.34,+Jakarta+Pusat,+DKI+Jakarta+10650"
 };
 
 const productsData = [
-    // 1. KATEGORI: LIFT PENUMPANG (PASSENGER ELEVATOR)
+    // 1. LIFT PENUMPANG
     {
         id: "lp1",
         title: "Mitsubishi NEXIEZ-MR Passenger Elevator (8 Person / 630 Kg)",
@@ -44,7 +44,7 @@ const productsData = [
         specs: { speed: "1.0 m/s", door: "Telescopic Center-Opening" }
     },
 
-    // 2. KATEGORI: LIFT BARANG (FREIGHT ELEVATOR)
+    // 2. LIFT BARANG
     {
         id: "lb1",
         title: "Kone TranSys Heavy Duty Industrial Freight Elevator (2000 Kg)",
@@ -68,7 +68,7 @@ const productsData = [
         specs: { capacity: "3000 Kg / 3 Ton", door: "2-Panel Vertical Bi-Parting" }
     },
 
-    // 3. KATEGORI: LIFT PASIEN / RUMAH SAKIT (BED ELEVATOR)
+    // 3. LIFT PASIEN
     {
         id: "lps1",
         title: "Mitsubishi Hospital Bed Elevator Cleanroom Series (1600 Kg)",
@@ -92,7 +92,7 @@ const productsData = [
         specs: { capacity: "1600 Kg Standar Kemenkes", door: "Extended Hold Button" }
     },
 
-    // 4. KATEGORI: ESKALATOR (ESCALATOR & MOVING WALK)
+    // 4. ESKALATOR
     {
         id: "esk1",
         title: "Mitsubishi Commercial Escalator J-Type 30 Degree (Width 1000 mm)",
@@ -116,7 +116,7 @@ const productsData = [
         specs: { stepWidth: "800 mm", handrail: "Synthetic Rubber" }
     },
 
-    // 5. KATEGORI: SPAREPART & KOMPONEN TEKNIS
+    // 5. SPAREPART
     {
         id: "sp1",
         title: "Monarch NICE3000+ Integrated Elevator Controller VVVF Inverter",
@@ -171,12 +171,135 @@ const productsData = [
         troubleCode: "ERR-33",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX1takYI8OkCl81u1Fk-k26dDOk9y3VtiulQkXAJ3h1kLgYDamJhbmgMlC&s=10",
         specs: { ratedSpeed: "1.0 - 2.5 m/s", action: "Mechanical Trip & Cut-off" }
+    },
+
+    // --- KATEGORI: ALAT PEMADAM API & SPRINKLER OTOMATIS ---
+    {
+        id: "fp1",
+        title: "Viking / Tyco Pendent Automatic Fire Sprinkler Head 68°C Glass Bulb (1/2 Inch NPT)",
+        oem: "VK-102-K5.6",
+        brand: "Viking",
+        category: "proteksi_kebakaran",
+        stockStatus: "Ready Stock",
+        troubleCode: "",
+        image: "https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2023/2/23/c2a5938b-80fe-4fdc-ad44-1d2e3d749fd9.jpg~tplv-aphluv4xwc-resize-jpeg:700:0.jpg",
+        specs: { temperature: "68°C (Bulb Merah)", thread: "1/2 Inch NPT / K-Factor 5.6" }
+    },
+    {
+        id: "fp2",
+        title: "Dry Chemical Powder Portable Fire Extinguisher (APAR 6 Kg ABC Powder)",
+        oem: "APAR-ABC-6KG",
+        brand: "Appron",
+        category: "proteksi_kebakaran",
+        stockStatus: "Ready Stock",
+        troubleCode: "",
+        image: "https://appron.co.id/wp-content/uploads/2021/11/Alat-Pemadam-Api-ABC-Powder-AP-60P-6-Kilogram-1.jpg",
+        specs: { weight: "6 Kg Powder", rating: "ABC High Pressure Fire Hazard" }
+    },
+    {
+        id: "fp3",
+        title: "CO2 Carbon Dioxide Fire Extinguisher APAR 5 Kg Clean Agent",
+        oem: "APAR-CO2-5KG",
+        brand: "Appron",
+        category: "proteksi_kebakaran",
+        stockStatus: "Ready Stock",
+        troubleCode: "",
+        image: "https://appron.co.id/wp-content/uploads/2022/04/Alat-Pemadam-Api-APAR-AC-12-Carbon-Dioxide-CO2-5-Kg-3.jpg",
+        specs: { gas: "CO2 Pure Clean Agent", application: "Ruang Server & Panel Listrik" }
+    },
+
+    // --- KATEGORI: DETEKTOR & SISTEM ALARM KEBAKARAN ---
+    {
+        id: "fa1",
+        title: "Apollo XP95 Addressable Optical Smoke Detector Sensor",
+        oem: "APOLLO-XP95-SMK",
+        brand: "Apollo",
+        category: "fire_alarm",
+        stockStatus: "Ready Stock",
+        troubleCode: "FA-LOOP-ERR",
+        image: "https://c-tec.com/wp-content/uploads/2016/01/p_5_8_3_583-Apollo-XP95-55000-885-Optical-Smoke-Detector.jpg",
+        specs: { type: "Addressable Optical Smoke", voltage: "17-28V DC Loop" }
+    },
+    {
+        id: "fa2",
+        title: "Nittan / Hong Chang Rate of Rise Heat Detector (Fixed Temp 60°C)",
+        oem: "NITTAN-ROR-HD60",
+        brand: "Nittan",
+        category: "fire_alarm",
+        stockStatus: "Ready Stock",
+        troubleCode: "",
+        image: "https://firealarm.id/wp-content/uploads/2020/02/fixed-temperature-heat-detector-hc-407a.jpg",
+        specs: { coverage: "40 m2 (Tinggi H<4m)", type: "Thermal Sensing ROR" }
+    },
+    {
+        id: "fa3",
+        title: "Manual Call Point Glass Break Breakglass Emergency Button + Key Lock",
+        oem: "MCP-BG-RED",
+        brand: "Nohmi",
+        category: "fire_alarm",
+        stockStatus: "Ready Stock",
+        troubleCode: "",
+        image: "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=770,height=770/https://media.zid.store/c8ea395e-772e-4ce7-bcfb-117308676724/2302853d-4b68-4aeb-b9fc-88c18adf28ad.jpg",
+        specs: { mounting: "Flush / Surface Wall", system: "Addressable / Conventional" }
+    },
+    {
+        id: "fa4",
+        title: "Fire Alarm Motorized Alarm Bell 6 Inch 24V DC Red Box",
+        oem: "BELL-6IN-24V",
+        brand: "Hong Chang",
+        category: "fire_alarm",
+        stockStatus: "Ready Stock",
+        troubleCode: "",
+        image: "https://media.cityelectricsupply.com/media/images/edwards_985129_p_lrg.webp",
+        specs: { soundLevel: "95dB at 3 Meters", power: "24V DC 25mA" }
+    },
+
+    // --- KATEGORI: HYDRANT SYSTEM & PERALATAN TEKNIK GEDUNG ---
+    {
+        id: "hy1",
+        title: "Indoor Hydrant Box Type B Full Set (Canvas Hose 1.5 Inch x 30 Meter + Nozzle)",
+        oem: "HYD-BOX-TYPE-B",
+        brand: "Hooseki",
+        category: "hydrant_system",
+        stockStatus: "Ready Stock",
+        troubleCode: "",
+        image: "img/hy1.png",
+        specs: { dimension: "125 x 75 x 18 cm", includes: "Hose Reel, Nozzle & Valve" }
+    },
+    {
+        id: "hy2",
+        title: "Outdoor Pilar Hydrant Machino Coupling Twin Vane 4 x 2.5 Inch",
+        oem: "HYD-PILAR-2WAY",
+        brand: "Appron",
+        category: "hydrant_system",
+        stockStatus: "Ready Stock",
+        troubleCode: "",
+        image: "https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2022/4/18/39598f05-8ccb-46f4-b4c6-ac8d3908eb74.jpg~tplv-aphluv4xwc-resize-jpeg:700:0.jpg",
+        specs: { pressure: "10-16 Bar Output", connection: "Machino Standard Damkar" }
+    },
+    {
+        id: "hy3",
+        title: "Siemese Connection Two-Way Hydrant Inlet 4 x 2.5 Inch Wall Mounted",
+        oem: "SIEMESE-S7-4X2.5",
+        brand: "Hooseki",
+        category: "hydrant_system",
+        stockStatus: "Ready Stock",
+        troubleCode: "",
+        image: "https://images.tokopedia.net/img/cache/700/VqbcmM/2022/7/28/6786f8db-5b03-4a21-b683-14a3b5f694e7.jpg.webp",
+        specs: { checkValve: "Internal Spring Check", material: "Cast Brass Heavy Duty" }
     }
 ];
 
 let currentBrand = "all";
 let currentCategory = "all";
 let currentB2BCategory = "Sparepart";
+
+const consultationTemplates = {
+    "Sparepart": "Halo Tim Antar Nusa Teknik, saya ingin menanyakan ketersediaan stok, part number, & penawaran harga suku cadang original OEM untuk kebutuhan gedung kami.",
+    "Pasang": "Halo Tim Antar Nusa Teknik, saya ingin berkonsultasi mengenai rencana pemasangan unit baru (lift/eskalator/proteksi kebakaran) serta estimasi kelayakan teknis di gedung kami.",
+    "Maintenance": "Halo Tim Antar Nusa Teknik, saya ingin mengajukan penawaran kontrak perawatan berkala (rutin bulanan/tahunan) untuk unit elevator atau sistem proteksi kebakaran di gedung kami.",
+    "Konsultasi": "Halo Tim Antar Nusa Teknik, saya ingin berkonsultasi secara teknis mengenai kendala operasional, perbaikan, atau sistem keamanan gedung kami."
+};
 
 let authState = {
     isLoggedIn: false,
@@ -189,6 +312,7 @@ let authState = {
 let pendingAction = null;
 
 document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
     checkSavedSession();
     renderProducts(productsData);
 
@@ -218,9 +342,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const b2bBtns = document.querySelectorAll('.b2b-pill');
     b2bBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            b2bBtns.forEach(b => b.classList.remove('active-b2b-pill', 'bg-amber-500', 'text-slate-950'));
-            btn.classList.add('active-b2b-pill', 'bg-amber-500', 'text-slate-950');
+            b2bBtns.forEach(b => {
+                b.classList.remove('active-b2b-pill', 'bg-amber-500', 'text-slate-950', 'border-amber-500');
+                b.classList.add('bg-slate-100', 'dark:bg-slate-950', 'text-slate-700', 'dark:text-slate-300', 'border-slate-300', 'dark:border-slate-800');
+            });
+            btn.classList.add('active-b2b-pill', 'bg-amber-500', 'text-slate-950', 'border-amber-500');
+            btn.classList.remove('bg-slate-100', 'dark:bg-slate-950', 'text-slate-700', 'dark:text-slate-300', 'border-slate-300', 'dark:border-slate-800');
+
             currentB2BCategory = btn.getAttribute('data-b2b') || 'Sparepart';
+            const descTextarea = document.getElementById('consult_desc');
+            if (descTextarea && consultationTemplates[currentB2BCategory]) {
+                descTextarea.value = consultationTemplates[currentB2BCategory];
+            }
         });
     });
 
@@ -234,7 +367,38 @@ document.addEventListener('DOMContentLoaded', () => {
     calculateEstimate();
 });
 
-// Fungsi Toggle Hamburger Menu Mobile
+// --- FITUR LIGHT / DARK MODE TOGGLE ---
+function initTheme() {
+    const savedTheme = localStorage.getItem('antar_nusa_theme');
+    const htmlEl = document.documentElement;
+    const themeIcon = document.getElementById('theme-icon');
+
+    if (savedTheme === 'light') {
+        htmlEl.classList.remove('dark');
+        if (themeIcon) themeIcon.className = 'ri-sun-line';
+    } else {
+        htmlEl.classList.add('dark');
+        if (themeIcon) themeIcon.className = 'ri-moon-line';
+    }
+}
+
+function toggleTheme() {
+    const htmlEl = document.documentElement;
+    const themeIcon = document.getElementById('theme-icon');
+
+    if (htmlEl.classList.contains('dark')) {
+        htmlEl.classList.remove('dark');
+        localStorage.setItem('antar_nusa_theme', 'light');
+        if (themeIcon) themeIcon.className = 'ri-sun-line';
+        showToast("Beralih ke Light Mode (Mode Terang)");
+    } else {
+        htmlEl.classList.add('dark');
+        localStorage.setItem('antar_nusa_theme', 'dark');
+        if (themeIcon) themeIcon.className = 'ri-moon-line';
+        showToast("Beralih ke Dark Mode (Mode Gelap)");
+    }
+}
+
 function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     const hamburgerIcon = document.getElementById('hamburger-icon');
@@ -276,10 +440,10 @@ function renderProducts(items) {
     const countLabel = document.getElementById('product-count-label');
     if (!grid) return;
 
-    if (countLabel) countLabel.innerText = `Menampilkan ${items.length} produk & suku cadang`;
+    if (countLabel) countLabel.innerText = `Menampilkan ${items.length} produk & peralatan gedung`;
 
     if (items.length === 0) {
-        grid.innerHTML = `<div class="col-span-2 lg:col-span-3 text-center py-10 text-xs text-slate-400 font-semibold glass-card rounded-2xl border border-slate-800 shadow-xl">Produk atau kode error tidak ditemukan.</div>`;
+        grid.innerHTML = `<div class="col-span-2 lg:col-span-3 text-center py-10 text-xs text-slate-500 dark:text-slate-400 font-semibold glass-card rounded-2xl border border-slate-300 dark:border-slate-800 shadow-xl">Produk atau kode error tidak ditemukan.</div>`;
         return;
     }
 
@@ -288,14 +452,14 @@ function renderProducts(items) {
         const specVal1 = p.specs[specKey1];
 
         return `
-            <div class="glass-card rounded-xl sm:rounded-2xl overflow-hidden border border-slate-800/80 flex flex-col justify-between shadow-xl hover:border-amber-500/50 transition-all group">
+            <div class="glass-card rounded-xl sm:rounded-2xl overflow-hidden border border-slate-300 dark:border-slate-800/80 flex flex-col justify-between shadow-xl hover:border-amber-500/50 transition-all group">
                 <div>
-                    <div class="relative h-32 sm:h-52 bg-slate-950 overflow-hidden">
+                    <div class="relative h-32 sm:h-52 bg-slate-100 dark:bg-slate-950 overflow-hidden">
                         <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <span class="absolute top-2 left-2 sm:top-3 sm:left-3 ${p.stockStatus === 'Ready Stock' ? 'bg-emerald-600' : 'bg-amber-600'} text-white text-[9px] sm:text-[10px] font-extrabold px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg shadow-md">
                             ${p.stockStatus}
                         </span>
-                        <button onclick="toggleBookmark('${p.id}')" class="absolute top-2 right-2 sm:top-3 sm:right-3 w-6 h-6 sm:w-8 sm:h-8 rounded-md sm:rounded-lg bg-slate-950/80 text-slate-300 flex items-center justify-center hover:text-amber-500 transition-colors">
+                        <button onclick="toggleBookmark('${p.id}')" class="absolute top-2 right-2 sm:top-3 sm:right-3 w-6 h-6 sm:w-8 sm:h-8 rounded-md sm:rounded-lg bg-white/80 dark:bg-slate-950/80 text-slate-700 dark:text-slate-300 flex items-center justify-center hover:text-amber-500 transition-colors">
                             <i class="ri-bookmark-line text-xs sm:text-sm"></i>
                         </button>
                         ${p.troubleCode ? `
@@ -306,20 +470,20 @@ function renderProducts(items) {
                     </div>
                     <div class="p-3 sm:p-5 space-y-1.5 sm:space-y-2.5">
                         <div class="flex items-center justify-between">
-                            <span class="text-[9px] sm:text-[10px] font-mono font-bold text-amber-500 uppercase truncate max-w-[65%]">OEM: ${p.oem}</span>
-                            <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 bg-slate-900 px-1.5 py-0.5 rounded">${p.brand}</span>
+                            <span class="text-[9px] sm:text-[10px] font-mono font-bold text-amber-600 dark:text-amber-500 uppercase truncate max-w-[65%]">OEM: ${p.oem}</span>
+                            <span class="text-[9px] sm:text-[10px] font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900 px-1.5 py-0.5 rounded">${p.brand}</span>
                         </div>
-                        <h3 class="text-xs sm:text-sm font-extrabold text-white line-clamp-2 leading-tight" title="${p.title}">${p.title}</h3>
-                        <div class="bg-slate-950/70 p-2 sm:p-3 rounded-lg sm:rounded-xl border border-slate-800 space-y-1 text-[10px] sm:text-[11px]">
-                            <div class="flex justify-between text-slate-400">
+                        <h3 class="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white line-clamp-2 leading-tight" title="${p.title}">${p.title}</h3>
+                        <div class="bg-slate-50 dark:bg-slate-950/70 p-2 sm:p-3 rounded-lg sm:rounded-xl border border-slate-200 dark:border-slate-800 space-y-1 text-[10px] sm:text-[11px]">
+                            <div class="flex justify-between text-slate-500 dark:text-slate-400">
                                 <span class="capitalize truncate">${specKey1}:</span>
-                                <span class="text-slate-200 font-bold truncate ml-1">${specVal1}</span>
+                                <span class="text-slate-800 dark:text-slate-200 font-bold truncate ml-1">${specVal1}</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="p-3 sm:p-5 pt-0 grid grid-cols-2 gap-1.5 sm:gap-2.5">
-                    <button onclick="showProductDetail('${p.id}')" class="py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-bold text-[11px] sm:text-xs border border-slate-700/80 transition-all">Detail</button>
+                    <button onclick="showProductDetail('${p.id}')" class="py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-slate-200 dark:bg-slate-900 hover:bg-slate-300 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold text-[11px] sm:text-xs border border-slate-300 dark:border-slate-700/80 transition-all">Detail</button>
                     <button onclick="askProductDirect('${p.title}', '${p.oem}', '${p.image}')" class="py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-[11px] sm:text-xs flex items-center justify-center gap-1 shadow-md transition-all">
                         <i class="ri-whatsapp-line text-sm"></i> Tanya
                     </button>
@@ -375,9 +539,9 @@ function showProductDetail(productId) {
 
     const specsContainer = document.getElementById('modal-product-specs');
     specsContainer.innerHTML = Object.entries(product.specs).map(([key, val]) => `
-        <div class="flex justify-between border-b border-slate-900 pb-1">
-            <span class="capitalize text-slate-400">${key}:</span>
-            <span class="text-slate-200 font-bold">${val}</span>
+        <div class="flex justify-between border-b border-slate-200 dark:border-slate-900 pb-1">
+            <span class="capitalize text-slate-500 dark:text-slate-400">${key}:</span>
+            <span class="text-slate-800 dark:text-slate-200 font-bold">${val}</span>
         </div>
     `).join('');
 
@@ -394,7 +558,7 @@ function openEmergencyModal() { document.getElementById('emergency-modal')?.clas
 function closeEmergencyModal() { document.getElementById('emergency-modal')?.classList.add('hidden'); }
 function triggerEmergencyCall() { window.location.href = `tel:${CONFIG.EMERGENCY_PHONE}`; }
 function triggerEmergencyWa() {
-    window.open(`https://wa.me/${CONFIG.WA_PHONE}?text=${encodeURIComponent("DARURAT: Mohon bantuan teknisi segera untuk penanganan lift bermasalah / terjebak di lokasi kami.")}`, '_blank');
+    window.open(`https://wa.me/${CONFIG.WA_PHONE}?text=${encodeURIComponent("DARURAT: Mohon bantuan teknisi segera untuk penanganan lift bermasalah / proteksi kebakaran di lokasi kami.")}`, '_blank');
 }
 
 function openTroubleCodeModal() { document.getElementById('trouble-modal')?.classList.remove('hidden'); }
@@ -435,16 +599,16 @@ function switchPortalTab(tab) {
 
     if (tab === 'login') {
         loginTab?.classList.add('bg-amber-500', 'text-slate-950', 'shadow-md');
-        loginTab?.classList.remove('text-slate-400');
+        loginTab?.classList.remove('text-slate-500', 'dark:text-slate-400');
         registerTab?.classList.remove('bg-amber-500', 'text-slate-950', 'shadow-md');
-        registerTab?.classList.add('text-slate-400');
+        registerTab?.classList.add('text-slate-500', 'dark:text-slate-400');
         loginForm?.classList.remove('hidden');
         registerForm?.classList.add('hidden');
     } else {
         registerTab?.classList.add('bg-amber-500', 'text-slate-950', 'shadow-md');
-        registerTab?.classList.remove('text-slate-400');
+        registerTab?.classList.remove('text-slate-500', 'dark:text-slate-400');
         loginTab?.classList.remove('bg-amber-500', 'text-slate-950', 'shadow-md');
-        loginTab?.classList.add('text-slate-400');
+        loginTab?.classList.add('text-slate-500', 'dark:text-slate-400');
         registerForm?.classList.remove('hidden');
         loginForm?.classList.add('hidden');
     }
@@ -620,7 +784,7 @@ function handleSurveyBookingSubmit(e) {
 function handleConsultationSubmit(e) {
     e.preventDefault();
     requireAuth(() => {
-        const desc = document.getElementById('consult_desc')?.value || 'Konsultasi umum perawatan dan pengadaan sparepart.';
+        const desc = document.getElementById('consult_desc')?.value || 'Konsultasi umum perawatan dan pengadaan alat.';
         const msg = `*PERMINTAAN PENAWARAN B2B - ANTAR NUSA TEKNIK*\n\n` +
                     `*Status Akun:* Terverifikasi\n` +
                     `*Kategori:* Konsultasi Umum (${currentB2BCategory})\n` +
@@ -639,13 +803,13 @@ function askProductDirect(title, oem, image) {
         const imgUrl = image || 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=600&q=80';
         const msg = `*PERMINTAAN PENAWARAN B2B - ANTAR NUSA TEKNIK*\n\n` +
                     `*Status Akun:* Terverifikasi\n` +
-                    `*Kategori:* Pengadaan Produk & Suku Cadang (${oem})\n` +
+                    `*Kategori:* Pengadaan Produk & Peralatan Gedung (${oem})\n` +
                     `*PIC:* ${authState.userName}\n` +
                     `*Perusahaan:* ${authState.userCompany}\n` +
                     `*WhatsApp:* ${authState.userPhone}\n` +
                     `*Email:* ${authState.userEmail}\n\n` +
                     `*Rincian Kebutuhan:*\n` +
-                    `Halo Tim Antar Nusa Teknik, saya ingin menanyakan ketersediaan stok & penawaran harga untuk unit/barang berikut:\n` +
+                    `Halo Tim Antar Nusa Teknik, saya ingin menanyakan ketersediaan stok & penawaran harga untuk produk berikut:\n` +
                     `- Nama Barang: ${title}\n` +
                     `- Foto Barang: ${imgUrl}`;
         window.open(`https://wa.me/${CONFIG.WA_PHONE}?text=${encodeURIComponent(msg)}`, '_blank');
@@ -662,7 +826,7 @@ function triggerWaConsultation() {
                     `*WhatsApp:* ${authState.userPhone}\n` +
                     `*Email:* ${authState.userEmail}\n\n` +
                     `*Rincian Kebutuhan:*\n` +
-                    `Halo Tim Antar Nusa Teknik, saya ingin berkonsultasi mengenai pengadaan unit atau perawatan lift/eskalator di gedung kami.`;
+                    `Halo Tim Antar Nusa Teknik, saya ingin berkonsultasi mengenai pengadaan unit, perawatan lift, atau alat proteksi kebakaran di gedung kami.`;
         window.open(`https://wa.me/${CONFIG.WA_PHONE}?text=${encodeURIComponent(msg)}`, '_blank');
     });
 }

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>CV. Antar Nusa Teknik - Supplier Sparepart Lift & Jasa Perawatan Eskalator Jakarta Pusat</title>
-    <meta name="description" content="Pusat pengadaan sparepart lift & eskalator original OEM, perawatan berkala, modernisasi inverter VVVF, dan sertifikasi K3 Depnaker resmi di Indonesia.">
+    <title>CV. Antar Nusa Teknik - Supplier Sparepart Lift, Alat Pemadam & Perawatan Gedung Jakarta Pusat</title>
+    <meta name="description" content="Pusat pengadaan sparepart lift original OEM, alat proteksi kebakaran (Sprinkler, APAR, Smoke Detector, Hydrant Box), perawatan berkala, dan sertifikasi K3 Depnaker resmi.">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,7 +44,7 @@
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased selection:bg-amber-500 selection:text-slate-950 bg-[#040711] text-slate-100 overflow-x-hidden">
+<body class="antialiased selection:bg-amber-500 selection:text-slate-950 bg-slate-100 dark:bg-[#040711] text-slate-800 dark:text-slate-100 transition-colors duration-300 overflow-x-hidden">
 
     <!-- TOAST NOTIFICATION CONTAINER -->
     <div id="toast-container" class="fixed top-20 right-3 left-3 sm:left-auto sm:right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
@@ -60,28 +60,28 @@
         </button>
     </div>
 
-    <!-- NAVBAR HEADER (RESPONSIF MOBILE & DESKTOP DENGAN HAMBURGER) -->
-    <header class="sticky top-0 z-40 glass-nav border-b border-slate-800/80 shadow-xl w-full">
+    <!-- NAVBAR HEADER -->
+    <header class="sticky top-0 z-40 glass-nav border-b border-slate-200 dark:border-slate-800/80 shadow-xl w-full transition-colors duration-300">
         <div class="w-full px-3 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 sm:h-20 gap-2">
                 
                 <!-- Logo Perusahaan -->
                 <a href="#home" class="flex items-center gap-2.5 group flex-shrink-0">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-slate-950/80 border border-slate-800 p-1 flex items-center justify-center shadow group-hover:border-amber-500 transition-all overflow-hidden">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 p-1 flex items-center justify-center shadow group-hover:border-amber-500 transition-all overflow-hidden">
                         <img src="img/logo-antarnusa.png" alt="Logo CV. Antar Nusa Teknik" class="w-full h-full object-contain rounded-lg opacity-90 group-hover:scale-110 transition-transform">
                     </div>
                     <div class="flex flex-col justify-center">
-                        <span class="text-xs sm:text-base font-extrabold tracking-tight text-white leading-tight">
+                        <span class="text-xs sm:text-base font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
                             CV. ANTAR <span class="text-amber-500">NUSA</span>
                         </span>
-                        <span class="text-[9px] sm:text-[10px] tracking-widest text-sky-400 uppercase font-extrabold">
-                            NUSA TEKNIK
+                        <span class="text-[9px] sm:text-[10px] tracking-widest text-sky-600 dark:text-sky-400 uppercase font-extrabold">
+                            TEKNIK
                         </span>
                     </div>
                 </a>
 
                 <!-- Navigasi Menu Tengah (Desktop Only) -->
-                <nav class="hidden lg:flex items-center gap-6 text-xs sm:text-sm font-bold text-slate-300">
+                <nav class="hidden lg:flex items-center gap-6 text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300">
                     <a href="#home" class="hover:text-amber-500 transition-colors py-1">Beranda</a>
                     <a href="#about" class="hover:text-amber-500 transition-colors py-1">Tentang Kami</a>
                     <a href="#products" class="hover:text-amber-500 transition-colors py-1 flex items-center gap-1.5">
@@ -92,25 +92,21 @@
                     <a href="#certifications" class="hover:text-amber-500 transition-colors py-1">Sertifikasi K3</a>
                 </nav>
 
-                <!-- Tombol Aksi Kanan & Hamburger Menu Mobile -->
+                <!-- Tombol Aksi Kanan, Theme Switcher & Hamburger -->
                 <div class="flex items-center gap-2 flex-shrink-0">
-                    <button onclick="openHistoryModal()" class="hidden md:flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-slate-200 hover:border-slate-700 transition-colors">
-                        <i class="ri-history-line text-amber-500 text-sm"></i> Riwayat
+                    <!-- Tombol Pengalih Tema (Light / Dark Mode) -->
+                    <button onclick="toggleTheme()" class="w-10 h-10 rounded-xl bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-200 flex items-center justify-center text-lg hover:border-amber-500 transition-all focus:outline-none" title="Ganti Tema Terang/Gelap">
+                        <i id="theme-icon" class="ri-sun-line dark:ri-moon-line"></i>
                     </button>
-                    
-                    <button onclick="openSavedModal()" class="hidden md:flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-slate-200 hover:border-slate-700 transition-colors">
-                        <i class="ri-bookmark-line text-amber-500 text-sm"></i> Disimpan 
-                        <span class="px-1.5 py-0.5 bg-amber-500 text-slate-950 rounded text-[10px] font-extrabold ml-0.5">0</span>
-                    </button>
-                    
+
                     <button onclick="openPortalModal()" class="px-3.5 sm:px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold flex items-center gap-1.5 shadow-md transition-all relative">
                         <i class="ri-user-shared-line text-sm"></i> 
                         <span id="portal-btn-label">Portal</span>
-                        <span id="portal-indicator" class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-slate-950 hidden"></span>
+                        <span id="portal-indicator" class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-950 hidden"></span>
                     </button>
 
-                    <!-- Tombol Hamburger Garis 3 (Tampil di Mobile/Tablet) -->
-                    <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 flex items-center justify-center text-xl hover:border-amber-500 transition-all focus:outline-none">
+                    <!-- Tombol Hamburger Garis 3 (Mobile) -->
+                    <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 rounded-xl bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-200 flex items-center justify-center text-xl hover:border-amber-500 transition-all focus:outline-none">
                         <i id="hamburger-icon" class="ri-menu-3-line"></i>
                     </button>
                 </div>
@@ -118,31 +114,31 @@
             </div>
         </div>
 
-        <!-- DROPDOWN MENU MOBILE (Garis 3) -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950/98 border-t border-slate-800 px-5 py-5 space-y-3 shadow-2xl backdrop-blur-xl">
-            <a href="#home" onclick="toggleMobileMenu()" class="block py-2.5 text-xs font-bold text-slate-200 hover:text-amber-500 border-b border-slate-900 flex items-center justify-between">
-                <span>Beranda</span> <i class="ri-arrow-right-s-line text-slate-500"></i>
+        <!-- DROPDOWN MENU MOBILE -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white/98 dark:bg-slate-950/98 border-t border-slate-200 dark:border-slate-800 px-5 py-5 space-y-3 shadow-2xl backdrop-blur-xl transition-colors duration-300">
+            <a href="#home" onclick="toggleMobileMenu()" class="block py-2.5 text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-amber-500 border-b border-slate-100 dark:border-slate-900 flex items-center justify-between">
+                <span>Beranda</span> <i class="ri-arrow-right-s-line text-slate-400"></i>
             </a>
-            <a href="#about" onclick="toggleMobileMenu()" class="block py-2.5 text-xs font-bold text-slate-200 hover:text-amber-500 border-b border-slate-900 flex items-center justify-between">
-                <span>Tentang Kami</span> <i class="ri-arrow-right-s-line text-slate-500"></i>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2.5 text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-amber-500 border-b border-slate-100 dark:border-slate-900 flex items-center justify-between">
+                <span>Tentang Kami</span> <i class="ri-arrow-right-s-line text-slate-400"></i>
             </a>
-            <a href="#products" onclick="toggleMobileMenu()" class="block py-2.5 text-xs font-bold text-slate-200 hover:text-amber-500 border-b border-slate-900 flex items-center justify-between">
-                <span>Katalog Unit & Sparepart</span> <i class="ri-arrow-right-s-line text-slate-500"></i>
+            <a href="#products" onclick="toggleMobileMenu()" class="block py-2.5 text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-amber-500 border-b border-slate-100 dark:border-slate-900 flex items-center justify-between">
+                <span>Katalog Unit & Sparepart</span> <i class="ri-arrow-right-s-line text-slate-400"></i>
             </a>
-            <a href="#estimator" onclick="toggleMobileMenu()" class="block py-2.5 text-xs font-bold text-slate-200 hover:text-amber-500 border-b border-slate-900 flex items-center justify-between">
-                <span>Kalkulator Biaya B2B</span> <i class="ri-arrow-right-s-line text-slate-500"></i>
+            <a href="#estimator" onclick="toggleMobileMenu()" class="block py-2.5 text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-amber-500 border-b border-slate-100 dark:border-slate-900 flex items-center justify-between">
+                <span>Kalkulator Biaya B2B</span> <i class="ri-arrow-right-s-line text-slate-400"></i>
             </a>
-            <a href="#survey-section" onclick="toggleMobileMenu()" class="block py-2.5 text-xs font-bold text-slate-200 hover:text-amber-500 border-b border-slate-900 flex items-center justify-between">
-                <span>Booking Survey Lokasi</span> <i class="ri-arrow-right-s-line text-slate-500"></i>
+            <a href="#survey-section" onclick="toggleMobileMenu()" class="block py-2.5 text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-amber-500 border-b border-slate-100 dark:border-slate-900 flex items-center justify-between">
+                <span>Booking Survey Lokasi</span> <i class="ri-arrow-right-s-line text-slate-400"></i>
             </a>
-            <a href="#certifications" onclick="toggleMobileMenu()" class="block py-2.5 text-xs font-bold text-slate-200 hover:text-amber-500 border-b border-slate-900 flex items-center justify-between">
-                <span>Sertifikasi K3 Depnaker</span> <i class="ri-arrow-right-s-line text-slate-500"></i>
+            <a href="#certifications" onclick="toggleMobileMenu()" class="block py-2.5 text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-amber-500 border-b border-slate-100 dark:border-slate-900 flex items-center justify-between">
+                <span>Sertifikasi K3 Depnaker</span> <i class="ri-arrow-right-s-line text-slate-400"></i>
             </a>
             <div class="grid grid-cols-2 gap-2.5 pt-2">
-                <button onclick="toggleMobileMenu(); openHistoryModal();" class="py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-slate-200 flex items-center justify-center gap-1.5">
+                <button onclick="toggleMobileMenu(); openHistoryModal();" class="py-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center justify-center gap-1.5">
                     <i class="ri-history-line text-amber-500"></i> Riwayat
                 </button>
-                <button onclick="toggleMobileMenu(); openSavedModal();" class="py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-slate-200 flex items-center justify-center gap-1.5">
+                <button onclick="toggleMobileMenu(); openSavedModal();" class="py-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center justify-center gap-1.5">
                     <i class="ri-bookmark-line text-amber-500"></i> Disimpan
                 </button>
             </div>
@@ -153,106 +149,106 @@
     <section id="home" class="py-10 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div class="lg:col-span-7 space-y-5">
-                <span class="inline-block px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 text-[11px] sm:text-xs font-bold uppercase tracking-wider">
-                    PUSAT UNIT & SPAREPART ELEVASI
+                <span class="inline-block px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-500 text-[11px] sm:text-xs font-bold uppercase tracking-wider">
+                    PUSAT UNIT, LIFT & PROTEKSI KEBAKARAN GEDUNG
                 </span>
-                <h1 class="text-2xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-                    Mitra Resmi Lift, Eskalator & <br><span class="text-amber-500">Perawatan Gedung</span>
+                <h1 class="text-2xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
+                    Mitra Resmi Lift, Eskalator & <br><span class="text-amber-500">Proteksi Gedung</span>
                 </h1>
-                <p class="text-slate-400 text-xs sm:text-base leading-relaxed font-medium max-w-2xl">
-                    CV. Antar Nusa Teknik melayani pengadaan unit Lift Penumpang, Barang, Pasien, Eskalator, suku cadang original OEM, perawatan berkala, modernisasi, serta sertifikasi K3 Depnaker resmi.
+                <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-base leading-relaxed font-medium max-w-2xl">
+                    CV. Antar Nusa Teknik melayani pengadaan unit Elevator, Eskalator, suku cadang original OEM, serta perlengkapan proteksi kebakaran gedung (Sprinkler, APAR, Smoke Detector, Hydrant) berstandar K3 Depnaker.
                 </p>
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
                     <a href="#products" class="px-5 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs sm:text-sm shadow-xl text-center flex items-center justify-center gap-2 transition-all">
                         <i class="ri-search-eye-line text-base"></i> Lihat Katalog Lengkap
                     </a>
-                    <button onclick="requireAuth(() => showToast('Mengunduh katalog PDF resmi...'))" class="px-5 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-white font-bold text-xs sm:text-sm hover:bg-slate-800 transition-all text-center flex items-center justify-center gap-2">
+                    <button onclick="requireAuth(() => showToast('Mengunduh katalog PDF resmi...'))" class="px-5 py-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-800 dark:text-white font-bold text-xs sm:text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-all text-center flex items-center justify-center gap-2 shadow">
                         <i class="ri-file-pdf-line text-amber-500 text-base"></i> Unduh Katalog PDF
                     </button>
                 </div>
             </div>
 
             <!-- PANDUAN KONSULTASI CARD -->
-            <div class="lg:col-span-5 glass-card p-5 sm:p-7 rounded-2xl sm:rounded-3xl border border-slate-800 shadow-2xl space-y-3.5">
-                <h3 class="text-xs sm:text-sm font-extrabold text-white border-b border-slate-800 pb-3 flex items-center justify-between">
+            <div class="lg:col-span-5 glass-card p-5 sm:p-7 rounded-2xl sm:rounded-3xl border border-slate-300 dark:border-slate-800 shadow-2xl space-y-3.5">
+                <h3 class="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-3 flex items-center justify-between">
                     <span>Panduan Konsultasi Cepat (Login Guard)</span>
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
                 </h3>
-                <div onclick="openTroubleCodeModal()" class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between group cursor-pointer hover:border-amber-500 transition-all">
+                <div onclick="openTroubleCodeModal()" class="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 flex items-center justify-between group cursor-pointer hover:border-amber-500 transition-all">
                     <div class="flex items-center gap-3">
                         <div class="w-9 h-9 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-sm shadow">
                             <i class="ri-box-3-line"></i>
                         </div>
                         <div>
-                            <div class="text-xs font-bold text-white">Pencarian Unit & Sparepart</div>
-                            <div class="text-[10px] text-slate-400">Pengecekan spesifikasi & ketersediaan</div>
+                            <div class="text-xs font-bold text-slate-900 dark:text-white">Pencarian Unit & Sparepart</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400">Pengecekan spesifikasi & ketersediaan</div>
                         </div>
                     </div>
-                    <i class="ri-arrow-right-s-line text-slate-500 group-hover:text-amber-500 text-base"></i>
+                    <i class="ri-arrow-right-s-line text-slate-400 group-hover:text-amber-500 text-base"></i>
                 </div>
-                <div onclick="openTroubleCodeModal()" class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between group cursor-pointer hover:border-amber-500 transition-all">
+                <div onclick="openTroubleCodeModal()" class="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 flex items-center justify-between group cursor-pointer hover:border-amber-500 transition-all">
                     <div class="flex items-center gap-3">
                         <div class="w-9 h-9 rounded-xl bg-red-600 text-white flex items-center justify-center font-bold text-sm shadow">
                             <i class="ri-tools-line"></i>
                         </div>
                         <div>
-                            <div class="text-xs font-bold text-white">Troubleshooting / Perbaikan</div>
-                            <div class="text-[10px] text-slate-400">Penanganan error atau unit mogok</div>
+                            <div class="text-xs font-bold text-slate-900 dark:text-white">Troubleshooting / Perbaikan</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400">Penanganan error atau unit mogok</div>
                         </div>
                     </div>
-                    <i class="ri-arrow-right-s-line text-slate-500 group-hover:text-amber-500 text-base"></i>
+                    <i class="ri-arrow-right-s-line text-slate-400 group-hover:text-amber-500 text-base"></i>
                 </div>
-                <div onclick="quickSelectService('Modernisasi / Unit Baru')" class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between group cursor-pointer hover:border-amber-500 transition-all">
+                <div onclick="quickSelectService('Modernisasi / Unit Baru')" class="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 flex items-center justify-between group cursor-pointer hover:border-amber-500 transition-all">
                     <div class="flex items-center gap-3">
                         <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shadow">
                             <i class="ri-refresh-line"></i>
                         </div>
                         <div>
-                            <div class="text-xs font-bold text-white">Modernisasi / Unit Baru</div>
-                            <div class="text-[10px] text-slate-400">Upgrade sistem lift & eskalator</div>
+                            <div class="text-xs font-bold text-slate-900 dark:text-white">Modernisasi / Unit Baru</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400">Upgrade sistem lift & eskalator</div>
                         </div>
                     </div>
-                    <i class="ri-arrow-right-s-line text-slate-500 group-hover:text-amber-500 text-base"></i>
+                    <i class="ri-arrow-right-s-line text-slate-400 group-hover:text-amber-500 text-base"></i>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- PROFIL PERUSAHAAN -->
-    <section id="about" class="py-14 sm:py-20 bg-slate-900/40 border-y border-slate-800">
+    <section id="about" class="py-14 sm:py-20 bg-slate-200/60 dark:bg-slate-900/40 border-y border-slate-300 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div class="lg:col-span-6 space-y-4">
-                    <span class="text-xs font-bold text-amber-500 uppercase tracking-widest block"><i class="ri-building-line"></i> PROFIL PERUSAHAAN</span>
-                    <h2 class="text-xl sm:text-4xl font-extrabold text-white leading-tight">Pengalaman Rekayasa Transportasi Vertikal 15+ Tahun</h2>
-                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed font-medium">
-                        CV. Antar Nusa Teknik berkomitmen memberikan standar keselamatan tertinggi untuk setiap sistem elevasi gedung. Ditunjang teknisi berpengalaman dan gudang suku cadang terintegrasi.
+                    <span class="text-xs font-bold text-amber-600 dark:text-amber-500 uppercase tracking-widest block"><i class="ri-building-line"></i> PROFIL PERUSAHAAN</span>
+                    <h2 class="text-xl sm:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">Pengalaman Rekayasa Transportasi Vertikal & Proteksi Gedung 15+ Tahun</h2>
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
+                        CV. Antar Nusa Teknik berkomitmen memberikan standar keselamatan tertinggi untuk setiap sistem elevasi dan proteksi kebakaran gedung. Ditunjang teknisi berpengalaman dan gudang suku cadang terintegrasi.
                     </p>
                     <div class="grid grid-cols-2 gap-3.5 pt-1">
-                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1 shadow">
-                            <div class="text-xl sm:text-2xl font-extrabold text-amber-500">&lt; 15 Menit</div>
-                            <div class="text-[11px] text-slate-400 font-semibold">Respon Tim WA</div>
+                        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 space-y-1 shadow">
+                            <div class="text-xl sm:text-2xl font-extrabold text-amber-600 dark:text-amber-500">&lt; 15 Menit</div>
+                            <div class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold">Respon Tim WA</div>
                         </div>
-                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1 shadow">
-                            <div class="text-xl sm:text-2xl font-extrabold text-white">100% Original</div>
-                            <div class="text-[11px] text-slate-400 font-semibold">Jaminan OEM</div>
+                        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 space-y-1 shadow">
+                            <div class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">100% Original</div>
+                            <div class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold">Jaminan OEM</div>
                         </div>
                     </div>
                 </div>
                 <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-2.5 shadow-xl">
-                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl font-bold">
+                    <div class="glass-card p-5 rounded-2xl border border-slate-300 dark:border-slate-800 space-y-2.5 shadow-xl">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-500 flex items-center justify-center text-xl font-bold">
                             <i class="ri-shield-star-line"></i>
                         </div>
-                        <h4 class="text-xs sm:text-sm font-bold text-white">Teknisi Sertifikasi K3</h4>
-                        <p class="text-[11px] text-slate-400 leading-relaxed">Seluruh tim bersertifikat K3 Depnaker untuk garansi kerja aman & standar operasional.</p>
+                        <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">Teknisi Sertifikasi K3</h4>
+                        <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">Seluruh tim bersertifikat K3 Depnaker untuk garansi kerja aman & standar operasional.</p>
                     </div>
-                    <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-2.5 shadow-xl">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl font-bold">
+                    <div class="glass-card p-5 rounded-2xl border border-slate-300 dark:border-slate-800 space-y-2.5 shadow-xl">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-500 flex items-center justify-center text-xl font-bold">
                             <i class="ri-time-line"></i>
                         </div>
-                        <h4 class="text-xs sm:text-sm font-bold text-white">Layanan Siaga 24/7</h4>
-                        <p class="text-[11px] text-slate-400 leading-relaxed">Tim troubleshooting darurat siap bergerak cepat saat terjadi gangguan sistem.</p>
+                        <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">Layanan Siaga 24/7</h4>
+                        <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">Tim troubleshooting darurat siap bergerak cepat saat terjadi gangguan sistem.</p>
                     </div>
                 </div>
             </div>
@@ -263,44 +259,44 @@
     <section id="products" class="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-6">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-                <span class="text-xs font-bold text-amber-500 uppercase tracking-widest block"><i class="ri-box-3-line"></i> KATALOG UNIT & SPAREPART</span>
-                <h2 class="text-xl sm:text-3xl font-extrabold text-white mt-1">Daftar Produk & Suku Cadang Resmi</h2>
+                <span class="text-xs font-bold text-amber-600 dark:text-amber-500 uppercase tracking-widest block"><i class="ri-box-3-line"></i> KATALOG UNIT & PERLENGKAPAN GEDUNG</span>
+                <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Daftar Produk, Lift & Alat Proteksi Kebakaran</h2>
             </div>
             <div class="flex flex-col sm:flex-row gap-2.5">
-                <button onclick="openTroubleCodeModal()" class="px-3.5 py-2.5 bg-slate-900 hover:bg-slate-800 text-slate-200 rounded-xl text-xs font-bold flex items-center justify-center gap-2 border border-slate-800 shadow">
-                    <i class="ri-bug-line text-amber-500 text-sm"></i> Cari via Kode Error (Fault Code)
+                <button onclick="openTroubleCodeModal()" class="px-3.5 py-2.5 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 rounded-xl text-xs font-bold flex items-center justify-center gap-2 border border-slate-300 dark:border-slate-800 shadow">
+                    <i class="ri-bug-line text-amber-600 dark:text-amber-500 text-sm"></i> Cari via Kode Error (Fault Code)
                 </button>
                 <div class="relative">
                     <i class="ri-search-line absolute left-3.5 top-3 text-slate-400 text-sm"></i>
-                    <input type="text" id="product-search-input" placeholder="Cari unit, merk, atau error..." class="w-full sm:w-72 bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-3 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500 shadow-inner">
+                    <input type="text" id="product-search-input" placeholder="Cari unit, merk, atau error..." class="w-full sm:w-72 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-xl pl-10 pr-3 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-amber-500 shadow-inner">
                 </div>
             </div>
         </div>
 
         <!-- FILTER KATEGORI -->
         <div class="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
-            <span class="text-xs font-bold text-slate-400 mr-1 flex-shrink-0">Kategori:</span>
+            <span class="text-xs font-bold text-slate-500 dark:text-slate-400 mr-1 flex-shrink-0">Kategori:</span>
             <button class="cat-pill active-cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500 text-slate-950 flex-shrink-0 shadow transition-all" data-category="all">Semua Katalog</button>
-            <button class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 flex-shrink-0 shadow transition-all" data-category="penumpang">Lift Penumpang</button>
-            <button class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 flex-shrink-0 shadow transition-all" data-category="barang">Lift Barang</button>
-            <button class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 flex-shrink-0 shadow transition-all" data-category="pasien">Lift Pasien</button>
-            <button class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 flex-shrink-0 shadow transition-all" data-category="eskalator">Eskalator</button>
-            <button class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 flex-shrink-0 shadow transition-all" data-category="sparepart">Sparepart</button>
+            <button class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 flex-shrink-0 shadow transition-all" data-category="penumpang">Lift Penumpang</button>
+            <button class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 flex-shrink-0 shadow transition-all" data-category="barang">Lift Barang</button>
+            <button class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 flex-shrink-0 shadow transition-all" data-category="sparepart">Sparepart Lift</button>
+            <button class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 flex-shrink-0 shadow transition-all" data-category="proteksi_kebakaran">Sprinkler & APAR</button>
+            <button class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 flex-shrink-0 shadow transition-all" data-category="fire_alarm">Smoke & Heat Alarm</button>
+            <button class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 flex-shrink-0 shadow transition-all" data-category="hydrant_system">Hydrant & Pilar</button>
         </div>
 
         <!-- FILTER MERK OEM -->
         <div class="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
-            <span class="text-xs font-bold text-slate-400 mr-1 flex-shrink-0">MERK OEM:</span>
+            <span class="text-xs font-bold text-slate-500 dark:text-slate-400 mr-1 flex-shrink-0">MERK OEM:</span>
             <button class="brand-pill active-brand-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500 text-slate-950 flex-shrink-0 shadow transition-all" data-brand="all">Semua Merk</button>
-            <button class="brand-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 flex-shrink-0 shadow transition-all" data-brand="Mitsubishi">Mitsubishi</button>
-            <button class="brand-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 flex-shrink-0 shadow transition-all" data-brand="Otis">Otis</button>
-            <button class="brand-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 flex-shrink-0 shadow transition-all" data-brand="Schindler">Schindler</button>
-            <button class="brand-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 flex-shrink-0 shadow transition-all" data-brand="Kone">Kone</button>
-            <button class="brand-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 flex-shrink-0 shadow transition-all" data-brand="Hyundai">Hyundai</button>
-            <button class="brand-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 flex-shrink-0 shadow transition-all" data-brand="Monarch">Monarch</button>
+            <button class="brand-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 flex-shrink-0 shadow transition-all" data-brand="Mitsubishi">Mitsubishi</button>
+            <button class="brand-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 flex-shrink-0 shadow transition-all" data-brand="Otis">Otis</button>
+            <button class="brand-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 flex-shrink-0 shadow transition-all" data-brand="Viking">Viking</button>
+            <button class="brand-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 flex-shrink-0 shadow transition-all" data-brand="Apollo">Apollo</button>
+            <button class="brand-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 flex-shrink-0 shadow transition-all" data-brand="Hooseki">Hooseki</button>
         </div>
 
-        <div id="product-count-label" class="text-xs text-slate-400 font-bold">Menampilkan produk & suku cadang</div>
+        <div id="product-count-label" class="text-xs text-slate-500 dark:text-slate-400 font-bold">Menampilkan produk & suku cadang</div>
 
         <!-- GRID KATALOG (2 Kolom di Mobile, 3 Kolom di Desktop) -->
         <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6" id="product-grid"></div>
@@ -308,17 +304,17 @@
 
     <!-- KALKULATOR ESTIMASI BIAYA B2B -->
     <section id="estimator" class="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <div class="glass-card p-6 sm:p-10 rounded-3xl border border-slate-800 shadow-2xl space-y-6">
+        <div class="glass-card p-6 sm:p-10 rounded-3xl border border-slate-300 dark:border-slate-800 shadow-2xl space-y-6">
             <div class="text-center space-y-1.5">
-                <span class="text-xs font-bold text-amber-500 uppercase tracking-widest"><i class="ri-calculator-line"></i> SIMULASI ANGGARAN & KONTRAK</span>
-                <h2 class="text-xl sm:text-3xl font-extrabold text-white">Kalkulator Estimasi Biaya B2B</h2>
-                <p class="text-xs text-slate-400">Pilih jenis layanan atau kontrak perawatan berkala untuk estimasi biaya operasional gedung.</p>
+                <span class="text-xs font-bold text-amber-600 dark:text-amber-500 uppercase tracking-widest"><i class="ri-calculator-line"></i> SIMULASI ANGGARAN & KONTRAK</span>
+                <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Kalkulator Estimasi Biaya B2B</h2>
+                <p class="text-xs text-slate-600 dark:text-slate-400">Pilih jenis layanan atau kontrak perawatan berkala untuk estimasi biaya operasional gedung.</p>
             </div>
 
             <div class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold mb-1.5 text-slate-300">Pilih Jenis Layanan / Kontrak:</label>
-                    <select id="calc-service-type" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-3 text-xs text-white font-bold focus:outline-none focus:border-amber-500" onchange="calculateEstimate()">
+                    <label class="block text-xs font-bold mb-1.5 text-slate-700 dark:text-slate-300">Pilih Jenis Layanan / Kontrak:</label>
+                    <select id="calc-service-type" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl px-3.5 py-3 text-xs text-slate-900 dark:text-white font-bold focus:outline-none focus:border-amber-500" onchange="calculateEstimate()">
                         <option value="maintenance">Maintenance Rutin Bulanan (Kontrak Service)</option>
                         <option value="annual_contract">Kontrak Maintenance Tahunan (Free Emergency Call 24/7)</option>
                         <option value="overhaul">Major Overhaul / Motor Traksi & Rem</option>
@@ -328,12 +324,12 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div>
-                        <label class="block text-xs font-bold mb-1.5 text-slate-300">Jumlah Unit / Lantai:</label>
-                        <input type="number" id="calc-units" value="1" min="1" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-3 text-xs text-white font-bold focus:outline-none focus:border-amber-500" oninput="calculateEstimate()">
+                        <label class="block text-xs font-bold mb-1.5 text-slate-700 dark:text-slate-300">Jumlah Unit / Lantai:</label>
+                        <input type="number" id="calc-units" value="1" min="1" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl px-3.5 py-3 text-xs text-slate-900 dark:text-white font-bold focus:outline-none focus:border-amber-500" oninput="calculateEstimate()">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold mb-1.5 text-slate-300">Lokasi Gedung:</label>
-                        <select id="calc-location" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-3 text-xs text-white font-bold focus:outline-none focus:border-amber-500" onchange="calculateEstimate()">
+                        <label class="block text-xs font-bold mb-1.5 text-slate-700 dark:text-slate-300">Lokasi Gedung:</label>
+                        <select id="calc-location" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl px-3.5 py-3 text-xs text-slate-900 dark:text-white font-bold focus:outline-none focus:border-amber-500" onchange="calculateEstimate()">
                             <option value="jakarta">DKI Jakarta & Sekitarnya</option>
                             <option value="tangerang">Tangerang & Banten</option>
                             <option value="other">Luar Jabodetabek (Jawa)</option>
@@ -341,10 +337,10 @@
                     </div>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 text-center space-y-1.5 shadow-inner">
-                    <div class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Kisaran Estimasi Anggaran:</div>
-                    <div id="calc-result-price" class="text-2xl sm:text-4xl font-extrabold text-amber-500">Rp 1.500.000 - Rp 2.500.000</div>
-                    <div class="text-[10px] text-slate-500">*Estimasi kasar, penawaran kontrak resmi dikirim pasca survey lapangan.</div>
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-center space-y-1.5 shadow-inner">
+                    <div class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider">Kisaran Estimasi Anggaran:</div>
+                    <div id="calc-result-price" class="text-2xl sm:text-4xl font-extrabold text-amber-600 dark:text-amber-500">Rp 1.500.000 - Rp 2.500.000</div>
+                    <div class="text-[10px] text-slate-400">*Estimasi kasar, penawaran kontrak resmi dikirim pasca survey lapangan.</div>
                 </div>
 
                 <button onclick="sendEstimatorToWa()" class="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl transition-all">
@@ -358,45 +354,45 @@
     <section id="survey-section" class="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div class="lg:col-span-5 space-y-4">
-                <span class="text-xs font-bold text-amber-500 uppercase tracking-widest block"><i class="ri-calendar-event-line"></i> KUNJUNGAN LAPANGAN</span>
-                <h2 class="text-xl sm:text-3xl font-extrabold text-white leading-tight">Jadwalkan Survey Lokasi Lift</h2>
-                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed font-medium">
-                    Teknisi senior kami siap hadir memeriksa kondisi unit lift atau eskalator di gedung Anda secara komprehensif.
+                <span class="text-xs font-bold text-amber-600 dark:text-amber-500 uppercase tracking-widest block"><i class="ri-calendar-event-line"></i> KUNJUNGAN LAPANGAN</span>
+                <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 dark:text-white leading-tight">Jadwalkan Survey Lokasi Lift & Proteksi Gedung</h2>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
+                    Teknisi senior kami siap hadir memeriksa kondisi unit lift atau sistem proteksi kebakaran di gedung Anda secara komprehensif.
                 </p>
-                <div class="space-y-2.5 pt-1 text-xs text-slate-300 font-semibold">
+                <div class="space-y-2.5 pt-1 text-xs text-slate-700 dark:text-slate-300 font-semibold">
                     <div class="flex items-center gap-2"><i class="ri-checkbox-circle-fill text-amber-500 text-sm"></i> Survey awal gratis area Jabodetabek</div>
                     <div class="flex items-center gap-2"><i class="ri-checkbox-circle-fill text-amber-500 text-sm"></i> Laporan analisa kelayakan di tempat</div>
                 </div>
             </div>
 
-            <div class="lg:col-span-7 glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-2xl">
+            <div class="lg:col-span-7 glass-card p-6 sm:p-8 rounded-3xl border border-slate-300 dark:border-slate-800 shadow-2xl">
                 <form onsubmit="handleSurveyBookingSubmit(event)" class="space-y-4">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-xs font-bold mb-1.5 text-slate-300">Nama PIC *</label>
-                            <input type="text" id="survey_name" required placeholder="Naisya Audy" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white">
+                            <label class="block text-xs font-bold mb-1.5 text-slate-700 dark:text-slate-300">Nama PIC *</label>
+                            <input type="text" id="survey_name" required placeholder="Erlangga Rizki" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold mb-1.5 text-slate-300">Nama Gedung / Perusahaan *</label>
-                            <input type="text" id="survey_building" required placeholder="PT. Graha Indo Setya" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white">
+                            <label class="block text-xs font-bold mb-1.5 text-slate-700 dark:text-slate-300">Nama Gedung / Perusahaan *</label>
+                            <input type="text" id="survey_building" required placeholder="PT. Graha Indo Setya" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white">
                         </div>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-xs font-bold mb-1.5 text-slate-300">Tanggal Survey *</label>
-                            <input type="date" id="survey_date" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white">
+                            <label class="block text-xs font-bold mb-1.5 text-slate-700 dark:text-slate-300">Tanggal Survey *</label>
+                            <input type="date" id="survey_date" required class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold mb-1.5 text-slate-300">Waktu / Jam *</label>
-                            <select id="survey_time" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white">
+                            <label class="block text-xs font-bold mb-1.5 text-slate-700 dark:text-slate-300">Waktu / Jam *</label>
+                            <select id="survey_time" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white">
                                 <option value="Pagi (09:00 - 12:00 WIB)">Pagi (09:00 - 12:00 WIB)</option>
                                 <option value="Siang (13:00 - 15:00 WIB)">Siang (13:00 - 15:00 WIB)</option>
                             </select>
                         </div>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold mb-1.5 text-slate-300">Alamat Gedung *</label>
-                        <textarea id="survey_address" rows="3" required placeholder="Jl. Jend. Sudirman Kav. 24, Jakarta Selatan..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-xs text-white"></textarea>
+                        <label class="block text-xs font-bold mb-1.5 text-slate-700 dark:text-slate-300">Alamat Gedung *</label>
+                        <textarea id="survey_address" rows="3" required placeholder="Jl. Jend. Sudirman Kav. 24, Jakarta Selatan..." class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl p-3.5 text-xs text-slate-900 dark:text-white"></textarea>
                     </div>
                     <button type="submit" class="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs sm:text-sm shadow-xl flex items-center justify-center gap-2">
                         <i class="ri-whatsapp-line text-base"></i> Booking Survey via WA (Login Required)
@@ -407,32 +403,32 @@
     </section>
 
     <!-- SERTIFIKASI & LEGALITAS -->
-    <section id="certifications" class="py-14 sm:py-20 bg-slate-900/40 border-y border-slate-800">
+    <section id="certifications" class="py-14 sm:py-20 bg-slate-200/60 dark:bg-slate-900/40 border-y border-slate-300 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
             <div>
-                <span class="text-xs font-bold text-amber-500 uppercase tracking-widest block"><i class="ri-shield-check-line"></i> SERTIFIKASI & LEGALITAS RESMI</span>
-                <h2 class="text-xl sm:text-3xl font-extrabold text-white mt-1">Dipercaya Pengelola Gedung Bertingkat</h2>
+                <span class="text-xs font-bold text-amber-600 dark:text-amber-500 uppercase tracking-widest block"><i class="ri-shield-check-line"></i> SERTIFIKASI & LEGALITAS RESMI</span>
+                <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Dipercaya Pengelola Gedung Bertingkat</h2>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-                <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-2.5 shadow-xl">
-                    <i class="ri-award-line text-3xl text-amber-500"></i>
-                    <h5 class="text-xs font-extrabold text-white">K3 Depnaker RI</h5>
-                    <p class="text-[10px] text-slate-400">Teknisi sertifikat ahli keselamatan kerja.</p>
+                <div class="glass-card p-5 rounded-2xl border border-slate-300 dark:border-slate-800 space-y-2.5 shadow-xl">
+                    <i class="ri-award-line text-3xl text-amber-600 dark:text-amber-500"></i>
+                    <h5 class="text-xs font-extrabold text-slate-900 dark:text-white">K3 Depnaker RI</h5>
+                    <p class="text-[10px] text-slate-600 dark:text-slate-400">Teknisi sertifikat ahli keselamatan kerja.</p>
                 </div>
                 <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-2.5 shadow-xl">
-                    <i class="ri-shield-check-fill text-3xl text-amber-500"></i>
-                    <h5 class="text-xs font-extrabold text-white">ISO 9001:2015</h5>
-                    <p class="text-[10px] text-slate-400">Standar mutu manajemen pelayanan teknik.</p>
+                    <i class="ri-shield-check-fill text-3xl text-amber-600 dark:text-amber-500"></i>
+                    <h5 class="text-xs font-extrabold text-slate-900 dark:text-white">ISO 9001:2015</h5>
+                    <p class="text-[10px] text-slate-600 dark:text-slate-400">Standar mutu manajemen pelayanan teknik.</p>
                 </div>
                 <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-2.5 shadow-xl">
-                    <i class="ri-tools-fill text-3xl text-amber-500"></i>
-                    <h5 class="text-xs font-extrabold text-white">Uji Kelayakan</h5>
-                    <p class="text-[10px] text-slate-400">Pengujian beban & sistem pengereman.</p>
+                    <i class="ri-tools-fill text-3xl text-amber-600 dark:text-amber-500"></i>
+                    <h5 class="text-xs font-extrabold text-slate-900 dark:text-white">Uji Kelayakan</h5>
+                    <p class="text-[10px] text-slate-600 dark:text-slate-400">Pengujian beban & sistem pengereman.</p>
                 </div>
                 <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-2.5 shadow-xl">
-                    <i class="ri-medal-line text-3xl text-amber-500"></i>
-                    <h5 class="text-xs font-extrabold text-white">Garansi Unit</h5>
-                    <p class="text-[10px] text-slate-400">Garansi resmi 6 hingga 12 bulan.</p>
+                    <i class="ri-medal-line text-3xl text-amber-600 dark:text-amber-500"></i>
+                    <h5 class="text-xs font-extrabold text-slate-900 dark:text-white">Garansi Unit</h5>
+                    <p class="text-[10px] text-slate-600 dark:text-slate-400">Garansi resmi 6 hingga 12 bulan.</p>
                 </div>
             </div>
         </div>
@@ -442,37 +438,37 @@
     <section id="consultation-form" class="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div class="lg:col-span-4 space-y-3">
-                <span class="text-xs font-bold text-amber-500 uppercase tracking-widest block"><i class="ri-customer-service-2-line"></i> LAYANAN PELANGGAN</span>
-                <h2 class="text-xl sm:text-3xl font-extrabold text-white">Formulir Konsultasi B2B</h2>
-                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed font-medium">
+                <span class="text-xs font-bold text-amber-600 dark:text-amber-500 uppercase tracking-widest block"><i class="ri-customer-service-2-line"></i> LAYANAN PELANGGAN</span>
+                <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Formulir Konsultasi B2B</h2>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
                     Lengkapi form berikut & sertakan rincian kebutuhan Anda. Sistem akan membuatkan pesan WhatsApp formal siap kirim secara instan.
                 </p>
             </div>
 
-            <div class="lg:col-span-8 glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-2xl">
+            <div class="lg:col-span-8 glass-card p-6 sm:p-8 rounded-3xl border border-slate-300 dark:border-slate-800 shadow-2xl">
                 <form onsubmit="handleConsultationSubmit(event)" class="space-y-4">
                     <div>
-                        <label class="block text-xs font-bold mb-2 text-slate-300">Kategori Layanan:</label>
+                        <label class="block text-xs font-bold mb-2 text-slate-700 dark:text-slate-300">Kategori Layanan:</label>
                         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
                             <button type="button" class="b2b-pill active-b2b-pill py-2.5 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs border border-amber-500 transition-all shadow" data-b2b="Sparepart">Sparepart</button>
-                            <button type="button" class="b2b-pill py-2.5 rounded-xl bg-slate-950 text-slate-300 font-bold text-xs border border-slate-800 transition-all shadow" data-b2b="Pasang">Pasang</button>
-                            <button type="button" class="b2b-pill py-2.5 rounded-xl bg-slate-950 text-slate-300 font-bold text-xs border border-slate-800 transition-all shadow" data-b2b="Maintenance">Maintenance</button>
-                            <button type="button" class="b2b-pill py-2.5 rounded-xl bg-slate-950 text-slate-300 font-bold text-xs border border-slate-800 transition-all shadow" data-b2b="Konsultasi">Konsultasi</button>
+                            <button type="button" class="b2b-pill py-2.5 rounded-xl bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-300 font-bold text-xs border border-slate-300 dark:border-slate-800 transition-all shadow" data-b2b="Pasang">Pasang</button>
+                            <button type="button" class="b2b-pill py-2.5 rounded-xl bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-300 font-bold text-xs border border-slate-300 dark:border-slate-800 transition-all shadow" data-b2b="Maintenance">Maintenance</button>
+                            <button type="button" class="b2b-pill py-2.5 rounded-xl bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-300 font-bold text-xs border border-slate-300 dark:border-slate-800 transition-all shadow" data-b2b="Konsultasi">Konsultasi</button>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold mb-1.5 text-slate-300">Foto / Lampiran Barang (Opsional)</label>
-                        <div class="border-2 border-dashed border-slate-800 rounded-2xl p-5 text-center bg-slate-950/50 space-y-2">
-                            <i class="ri-image-add-line text-2xl text-amber-500"></i>
-                            <div class="text-[11px] text-slate-400">Pilih foto dari galeri perangkat Anda</div>
-                            <button type="button" onclick="requireAuth(() => showToast('Fitur upload foto aktif.'))" class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-slate-200">Pilih File Foto</button>
+                        <label class="block text-xs font-bold mb-1.5 text-slate-700 dark:text-slate-300">Foto / Lampiran Barang (Opsional)</label>
+                        <div class="border-2 border-dashed border-slate-300 dark:border-slate-800 rounded-2xl p-5 text-center bg-slate-50 dark:bg-slate-950/50 space-y-2">
+                            <i class="ri-image-add-line text-2xl text-amber-600 dark:text-amber-500"></i>
+                            <div class="text-[11px] text-slate-500 dark:text-slate-400">Pilih foto dari galeri perangkat Anda</div>
+                            <button type="button" onclick="requireAuth(() => showToast('Fitur upload foto aktif.'))" class="px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200">Pilih File Foto</button>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold mb-1.5 text-slate-300">Rincian Kebutuhan *</label>
-                        <textarea id="consult_desc" rows="3" required placeholder="Tuliskan part number, merk, atau keluhan teknis secara detail..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-xs text-white leading-relaxed">Halo Tim Antar Nusa Teknik, saya ingin menanyakan ketersediaan stok & harga untuk kebutuhan pengadaan unit/sparepart gedung kami.</textarea>
+                        <label class="block text-xs font-bold mb-1.5 text-slate-700 dark:text-slate-300">Rincian Kebutuhan *</label>
+                        <textarea id="consult_desc" rows="3" required class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl p-3.5 text-xs text-slate-900 dark:text-white leading-relaxed">Halo Tim Antar Nusa Teknik, saya ingin menanyakan ketersediaan stok, part number, & penawaran harga suku cadang original OEM untuk kebutuhan gedung kami.</textarea>
                     </div>
 
                     <button type="submit" class="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl">
@@ -483,32 +479,31 @@
         </div>
     </section>
 
-    <!-- SECTION LOKASI & WORKSHOP + GOOGLE MAPS INTERAKTIF -->
-    <section id="workshop-location" class="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800">
+    <!-- SECTION LOKASI & WORKSHOP + GOOGLE MAPS -->
+    <section id="workshop-location" class="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-300 dark:border-slate-800">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <!-- Informasi Alamat Sisi Kiri -->
             <div class="lg:col-span-5 space-y-3.5">
-                <span class="text-xs font-bold text-amber-500 uppercase tracking-widest block"><i class="ri-map-pin-line"></i> WORKSHOP & GUDANG</span>
-                <h2 class="text-xl sm:text-3xl font-extrabold text-white">Gudang Pusat & Workshop Teknik</h2>
-                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed font-medium">
+                <span class="text-xs font-bold text-amber-600 dark:text-amber-500 uppercase tracking-widest block"><i class="ri-map-pin-line"></i> WORKSHOP & GUDANG</span>
+                <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Gudang Pusat & Workshop Teknik</h2>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
                     Jl. Bendungan Jago No.34, Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10650.
                 </p>
-                <div class="space-y-2 text-xs pt-1 font-semibold text-slate-300">
-                    <div class="flex items-center gap-2"><i class="ri-time-line text-amber-500 text-base"></i> Senin - Sabtu: 08:00 - 17:00 WIB</div>
-                    <div class="flex items-center gap-2 text-red-500"><i class="ri-alarm-warning-line text-base"></i> Emergency Lift Mogok: Standby 24 Jam</div>
+                <div class="space-y-2 text-xs pt-1 font-semibold text-slate-700 dark:text-slate-300">
+                    <div class="flex items-center gap-2"><i class="ri-time-line text-amber-600 dark:text-amber-500 text-base"></i> Senin - Sabtu: 08:00 - 17:00 WIB</div>
+                    <div class="flex items-center gap-2 text-red-500"><i class="ri-alarm-warning-line text-base"></i> Emergency Lift & Proteksi: Standby 24 Jam</div>
                 </div>
             </div>
 
-            <!-- Google Maps Asli (Iframe Interaktif) Sisi Kanan -->
-            <div class="lg:col-span-7 relative h-64 sm:h-88 rounded-2xl sm:rounded-3xl bg-slate-950 border border-slate-800 overflow-hidden shadow-2xl p-2">
-                <div class="relative w-full h-full rounded-xl sm:rounded-2xl overflow-hidden border border-slate-800/80">
+            <!-- Google Maps Sisi Kanan -->
+            <div class="lg:col-span-7 relative h-64 sm:h-88 rounded-2xl sm:rounded-3xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-800 overflow-hidden shadow-2xl p-2">
+                <div class="relative w-full h-full rounded-xl sm:rounded-2xl overflow-hidden border border-slate-300 dark:border-slate-800/80">
                     <div class="absolute top-3 left-3 z-10">
-                        <button onclick="openMapsLocation()" class="px-3 py-1.5 bg-slate-950/90 text-white border border-slate-700/80 rounded-xl text-[11px] sm:text-xs font-extrabold shadow-lg flex items-center gap-1.5 hover:bg-slate-900 transition-all">
-                            <i class="ri-map-pin-fill text-amber-500 text-sm"></i> Buka di Google Maps
+                        <button onclick="openMapsLocation()" class="px-3 py-1.5 bg-white/90 dark:bg-slate-950/90 text-slate-900 dark:text-white border border-slate-300 dark:border-slate-700/80 rounded-xl text-[11px] sm:text-xs font-extrabold shadow-lg flex items-center gap-1.5 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all">
+                            <i class="ri-map-pin-fill text-amber-600 dark:text-amber-500 text-sm"></i> Buka di Google Maps
                         </button>
                     </div>
 
-                    <!-- Google Maps Embed iFrame -->
                     <iframe 
                         class="w-full h-full rounded-xl sm:rounded-2xl grayscale contrast-125 opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                         src="https://maps.google.com/maps?q=Jl.+Bendungan+Jago+No.34,+Jakarta+Pusat,+DKI+Jakarta+10650&t=&z=16&ie=UTF8&iwloc=&output=embed" 
@@ -520,7 +515,7 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
 
-                    <div class="absolute bottom-3 right-3 bg-slate-950/90 border border-slate-800 px-2.5 py-1 rounded-lg text-[9px] sm:text-[10px] text-slate-300 font-mono shadow-md pointer-events-none">
+                    <div class="absolute bottom-3 right-3 bg-white/90 dark:bg-slate-950/90 border border-slate-300 dark:border-slate-800 px-2.5 py-1 rounded-lg text-[9px] sm:text-[10px] text-slate-700 dark:text-slate-300 font-mono shadow-md pointer-events-none">
                         Kemayoran &bull; Jakarta Pusat 10650
                     </div>
                 </div>
@@ -529,20 +524,20 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-slate-950 border-t border-slate-800 py-8">
-        <div class="w-full px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 font-medium text-center sm:text-left">
-            <span>CV. ANTAR NUSA TEKNIK &bull; Elevator & Escalator Engineering</span>
+    <footer class="bg-white dark:bg-slate-950 border-t border-slate-300 dark:border-slate-800 py-8 transition-colors duration-300">
+        <div class="w-full px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 dark:text-slate-400 font-medium text-center sm:text-left">
+            <span>CV. ANTAR NUSA TEKNIK &bull; Elevator, Escalator & Fire Protection Engineering</span>
             <span>&copy; 2026 CV. Antar Nusa Teknik. All rights reserved.</span>
         </div>
     </footer>
 
     <!-- MODAL DETAIL PRODUK -->
     <div id="product-detail-modal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card max-w-lg w-full rounded-3xl border border-slate-800 p-6 sm:p-8 relative space-y-5 shadow-2xl">
-            <button onclick="closeProductDetailModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white"><i class="ri-close-line text-2xl"></i></button>
+        <div class="glass-card max-w-lg w-full rounded-3xl border border-slate-300 dark:border-slate-800 p-6 sm:p-8 relative space-y-5 shadow-2xl">
+            <button onclick="closeProductDetailModal()" class="absolute top-5 right-5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"><i class="ri-close-line text-2xl"></i></button>
             
             <div class="space-y-4">
-                <div class="relative h-52 sm:h-60 rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
+                <div class="relative h-52 sm:h-60 rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-950 border border-slate-300 dark:border-slate-800">
                     <img id="modal-product-img" src="" alt="Detail Produk" class="w-full h-full object-cover">
                     <span id="modal-product-status" class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-lg shadow-md">
                         Ready Stock
@@ -551,20 +546,20 @@
                 
                 <div class="space-y-1.5">
                     <div class="flex items-center justify-between">
-                        <span id="modal-product-oem" class="text-xs font-mono font-bold text-amber-500 uppercase">OEM-CODE</span>
-                        <span id="modal-product-brand" class="text-xs font-bold text-slate-300 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Brand</span>
+                        <span id="modal-product-oem" class="text-xs font-mono font-bold text-amber-600 dark:text-amber-500 uppercase">OEM-CODE</span>
+                        <span id="modal-product-brand" class="text-xs font-bold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-900 px-2 py-0.5 rounded border border-slate-300 dark:border-slate-800">Brand</span>
                     </div>
-                    <h3 id="modal-product-title" class="text-base sm:text-lg font-extrabold text-white">Nama Produk Lengkap</h3>
+                    <h3 id="modal-product-title" class="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white">Nama Produk Lengkap</h3>
                 </div>
 
-                <div class="bg-slate-950 p-3.5 rounded-2xl border border-slate-800 space-y-2 text-xs">
-                    <div class="text-slate-400 font-bold uppercase tracking-wider text-[10px] mb-1">Spesifikasi Teknis:</div>
-                    <div id="modal-product-specs" class="space-y-1.5 text-slate-300"></div>
+                <div class="bg-slate-50 dark:bg-slate-950 p-3.5 rounded-2xl border border-slate-300 dark:border-slate-800 space-y-2 text-xs">
+                    <div class="text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider text-[10px] mb-1">Spesifikasi Teknis:</div>
+                    <div id="modal-product-specs" class="space-y-1.5 text-slate-700 dark:text-slate-300"></div>
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-3 pt-1">
-                <button onclick="closeProductDetailModal()" class="py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-bold text-xs border border-slate-700/80 transition-all">Tutup</button>
+                <button onclick="closeProductDetailModal()" class="py-3 rounded-xl bg-slate-200 dark:bg-slate-900 hover:bg-slate-300 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold text-xs border border-slate-300 dark:border-slate-700/80 transition-all">Tutup</button>
                 <button id="modal-product-wa-btn" onclick="" class="py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs flex items-center justify-center gap-1.5 shadow-md transition-all">
                     <i class="ri-whatsapp-line text-base"></i> Tanyakan via WA
                 </button>
@@ -575,13 +570,13 @@
     <!-- MODAL EMERGENCY -->
     <div id="emergency-modal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4">
         <div class="glass-card max-w-md w-full rounded-3xl border border-red-600 p-6 sm:p-8 relative space-y-4 shadow-2xl">
-            <button onclick="closeEmergencyModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white"><i class="ri-close-line text-2xl"></i></button>
+            <button onclick="closeEmergencyModal()" class="absolute top-5 right-5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"><i class="ri-close-line text-2xl"></i></button>
             <div class="text-center space-y-2">
                 <div class="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center mx-auto text-2xl animate-bounce shadow-xl">
                     <i class="ri-alarm-warning-fill"></i>
                 </div>
-                <h3 class="text-base sm:text-lg font-black text-red-500 uppercase tracking-wider">PANGGILAN EMERGENCY LIFT 24/7</h3>
-                <p class="text-xs text-slate-300 leading-relaxed">Layanan respon cepat untuk evakuasi orang terjebak atau penanganan unit lift mogok.</p>
+                <h3 class="text-base sm:text-lg font-black text-red-500 uppercase tracking-wider">PANGGILAN EMERGENCY 24/7</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Layanan respon cepat untuk evakuasi orang terjebak di lift atau gangguan sistem proteksi kebakaran.</p>
             </div>
             <div class="space-y-3 pt-1">
                 <button onclick="triggerEmergencyCall()" class="w-full py-3.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg">
@@ -596,21 +591,21 @@
 
     <!-- MODAL TROUBLE CODE -->
     <div id="trouble-modal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card max-w-md w-full rounded-3xl border border-slate-800 p-6 sm:p-8 relative space-y-4 shadow-2xl">
-            <button onclick="closeTroubleCodeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white"><i class="ri-close-line text-2xl"></i></button>
-            <h3 class="text-sm sm:text-base font-extrabold text-white flex items-center gap-2"><i class="ri-bug-line text-amber-500 text-lg"></i> Cari Kode Error Sistem Lift</h3>
+        <div class="glass-card max-w-md w-full rounded-3xl border border-slate-300 dark:border-slate-800 p-6 sm:p-8 relative space-y-4 shadow-2xl">
+            <button onclick="closeTroubleCodeModal()" class="absolute top-5 right-5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"><i class="ri-close-line text-2xl"></i></button>
+            <h3 class="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white flex items-center gap-2"><i class="ri-bug-line text-amber-600 dark:text-amber-500 text-lg"></i> Cari Kode Error Sistem Lift & Alarm</h3>
             <div class="space-y-2.5">
-                <button onclick="applyTroubleCodeSearch('ERR-02')" class="w-full p-3.5 rounded-2xl bg-slate-900 text-left hover:border-amber-500 border border-slate-800 transition-all shadow">
-                    <div class="text-xs font-mono font-bold text-amber-500">ERR-02 (Monarch)</div>
-                    <div class="text-[10px] text-slate-400 mt-0.5">Over-Current Akselerasi / Inverter Mainboard Fault</div>
+                <button onclick="applyTroubleCodeSearch('ERR-02')" class="w-full p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-900 text-left hover:border-amber-500 border border-slate-300 dark:border-slate-800 transition-all shadow">
+                    <div class="text-xs font-mono font-bold text-amber-600 dark:text-amber-500">ERR-02 (Monarch)</div>
+                    <div class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">Over-Current Akselerasi / Inverter Mainboard Fault</div>
                 </button>
-                <button onclick="applyTroubleCodeSearch('E-42')" class="w-full p-3.5 rounded-2xl bg-slate-900 text-left hover:border-amber-500 border border-slate-800 transition-all shadow">
-                    <div class="text-xs font-mono font-bold text-amber-500">E-42 (Otis Geared)</div>
-                    <div class="text-[10px] text-slate-400 mt-0.5">Door Interlock Switch Fault / Pintu Gagal Lock</div>
+                <button onclick="applyTroubleCodeSearch('FA-LOOP')" class="w-full p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-900 text-left hover:border-amber-500 border border-slate-300 dark:border-slate-800 transition-all shadow">
+                    <div class="text-xs font-mono font-bold text-amber-600 dark:text-amber-500">FA-LOOP-ERR (Fire Alarm)</div>
+                    <div class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">Addressable Loop Open Circuit / Detector Fault</div>
                 </button>
-                <button onclick="applyTroubleCodeSearch('ERR-33')" class="w-full p-3.5 rounded-2xl bg-slate-900 text-left hover:border-amber-500 border border-slate-800 transition-all shadow">
-                    <div class="text-xs font-mono font-bold text-amber-500">ERR-33 (Elevator Safety)</div>
-                    <div class="text-[10px] text-slate-400 mt-0.5">Speed Governor Over-Speed Trip / Rem Mekanis</div>
+                <button onclick="applyTroubleCodeSearch('ERR-33')" class="w-full p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-900 text-left hover:border-amber-500 border border-slate-300 dark:border-slate-800 transition-all shadow">
+                    <div class="text-xs font-mono font-bold text-amber-600 dark:text-amber-500">ERR-33 (Elevator Safety)</div>
+                    <div class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">Speed Governor Over-Speed Trip / Rem Mekanis</div>
                 </button>
             </div>
         </div>
@@ -618,35 +613,35 @@
 
     <!-- MODAL RIWAYAT -->
     <div id="history-modal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card max-w-md w-full rounded-3xl border border-slate-800 p-6 sm:p-8 relative space-y-4 shadow-2xl text-center">
-            <button onclick="closeHistoryModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white"><i class="ri-close-line text-2xl"></i></button>
-            <i class="ri-history-line text-4xl text-amber-500"></i>
-            <h3 class="text-base sm:text-lg font-extrabold text-white">Riwayat Konsultasi & Tiket</h3>
-            <p class="text-xs text-slate-400">Belum ada riwayat tiket konsultasi aktif pada sesi akun ini.</p>
+        <div class="glass-card max-w-md w-full rounded-3xl border border-slate-300 dark:border-slate-800 p-6 sm:p-8 relative space-y-4 shadow-2xl text-center">
+            <button onclick="closeHistoryModal()" class="absolute top-5 right-5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"><i class="ri-close-line text-2xl"></i></button>
+            <i class="ri-history-line text-4xl text-amber-600 dark:text-amber-500"></i>
+            <h3 class="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white">Riwayat Konsultasi & Tiket</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Belum ada riwayat tiket konsultasi aktif pada sesi akun ini.</p>
             <button onclick="closeHistoryModal()" class="w-full py-3 rounded-xl bg-amber-500 text-slate-950 font-extrabold text-xs shadow">Tutup</button>
         </div>
     </div>
 
     <!-- MODAL DISIMPAN -->
     <div id="saved-modal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card max-w-md w-full rounded-3xl border border-slate-800 p-6 sm:p-8 relative space-y-4 shadow-2xl text-center">
-            <button onclick="closeSavedModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white"><i class="ri-close-line text-2xl"></i></button>
-            <i class="ri-bookmark-line text-4xl text-amber-500"></i>
-            <h3 class="text-base sm:text-lg font-extrabold text-white">Produk Disimpan</h3>
-            <p class="text-xs text-slate-400">Belum ada produk atau suku cadang yang Anda tandai ke daftar simpan.</p>
+        <div class="glass-card max-w-md w-full rounded-3xl border border-slate-300 dark:border-slate-800 p-6 sm:p-8 relative space-y-4 shadow-2xl text-center">
+            <button onclick="closeSavedModal()" class="absolute top-5 right-5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"><i class="ri-close-line text-2xl"></i></button>
+            <i class="ri-bookmark-line text-4xl text-amber-600 dark:text-amber-500"></i>
+            <h3 class="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white">Produk Disimpan</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Belum ada produk atau suku cadang yang Anda tandai ke daftar simpan.</p>
             <button onclick="closeSavedModal()" class="w-full py-3 rounded-xl bg-amber-500 text-slate-950 font-extrabold text-xs shadow">Tutup</button>
         </div>
     </div>
 
     <!-- MODAL PORTAL CLIENT / LOGIN / REGISTER TERVALIDASI -->
     <div id="portal-modal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card max-w-md w-full rounded-3xl border border-slate-800 p-6 sm:p-8 relative space-y-4 shadow-2xl">
-            <button onclick="closePortalModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white"><i class="ri-close-line text-2xl"></i></button>
+        <div class="glass-card max-w-md w-full rounded-3xl border border-slate-300 dark:border-slate-800 p-6 sm:p-8 relative space-y-4 shadow-2xl">
+            <button onclick="closePortalModal()" class="absolute top-5 right-5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"><i class="ri-close-line text-2xl"></i></button>
             
             <div class="text-center space-y-1">
-                <i class="ri-user-shared-line text-3xl text-amber-500"></i>
-                <h3 class="text-base sm:text-lg font-extrabold text-white">Portal Klien & Autentikasi</h3>
-                <p class="text-[10px] sm:text-[11px] text-slate-400 leading-relaxed">Anda wajib mendaftar akun terlebih dahulu untuk melakukan konsultasi B2B, pemesanan, dan tanya produk via WhatsApp.</p>
+                <i class="ri-user-shared-line text-3xl text-amber-600 dark:text-amber-500"></i>
+                <h3 class="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white">Portal Klien & Autentikasi</h3>
+                <p class="text-[10px] sm:text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">Anda wajib mendaftar akun terlebih dahulu untuk melakukan konsultasi B2B, pemesanan, dan tanya produk via WhatsApp.</p>
             </div>
 
             <!-- KOTAK NOTIFIKASI ERROR / PERINGATAN LOGIN -->
@@ -656,52 +651,52 @@
             </div>
 
             <!-- Tab Switcher -->
-            <div class="grid grid-cols-2 gap-1.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-800">
+            <div class="grid grid-cols-2 gap-1.5 bg-slate-100 dark:bg-slate-950 p-1.5 rounded-2xl border border-slate-300 dark:border-slate-800">
                 <button id="portal-login-tab" onclick="switchPortalTab('login')" class="py-2.5 rounded-xl text-xs font-bold bg-amber-500 text-slate-950 transition-all shadow-md">Masuk (Login)</button>
-                <button id="portal-register-tab" onclick="switchPortalTab('register')" class="py-2.5 rounded-xl text-xs font-bold text-slate-400 transition-all">Daftar Akun Baru</button>
+                <button id="portal-register-tab" onclick="switchPortalTab('register')" class="py-2.5 rounded-xl text-xs font-bold text-slate-500 dark:text-slate-400 transition-all">Daftar Akun Baru</button>
             </div>
 
-            <!-- Form Login Ter-validasi -->
+            <!-- Form Login -->
             <form id="portal-login-form" onsubmit="handlePortalLogin(event)" class="space-y-3.5">
                 <div>
-                    <label class="block text-xs font-bold mb-1 text-slate-300">Email Perusahaan Terdaftar *</label>
-                    <input type="email" id="login_email" required placeholder="nama@perusahaan.co.id" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500">
+                    <label class="block text-xs font-bold mb-1 text-slate-700 dark:text-slate-300">Email Perusahaan Terdaftar *</label>
+                    <input type="email" id="login_email" required placeholder="nama@perusahaan.co.id" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-amber-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold mb-1 text-slate-300">Kata Sandi *</label>
-                    <input type="password" id="login_password" required placeholder="••••••••" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500">
+                    <label class="block text-xs font-bold mb-1 text-slate-700 dark:text-slate-300">Kata Sandi *</label>
+                    <input type="password" id="login_password" required placeholder="••••••••" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-amber-500">
                 </div>
                 <button type="submit" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs shadow-lg transition-all">Masuk Sekarang</button>
             </form>
 
-            <!-- Form Register (Pendaftaran Akun Baru) -->
+            <!-- Form Register -->
             <form id="portal-register-form" onsubmit="handlePortalRegister(event)" class="space-y-3 hidden">
                 <div>
-                    <label class="block text-xs font-bold mb-1 text-slate-300">Nama PIC / Penanggung Jawab *</label>
-                    <input type="text" id="reg_name" required placeholder="Erlangga Rizki" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500">
+                    <label class="block text-xs font-bold mb-1 text-slate-700 dark:text-slate-300">Nama PIC / Penanggung Jawab *</label>
+                    <input type="text" id="reg_name" required placeholder="Erlangga Rizki" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-amber-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold mb-1 text-slate-300">Nama Perusahaan / Gedung *</label>
-                    <input type="text" id="reg_company" required placeholder="PT. Graha Indo Setya" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500">
+                    <label class="block text-xs font-bold mb-1 text-slate-700 dark:text-slate-300">Nama Perusahaan / Gedung *</label>
+                    <input type="text" id="reg_company" required placeholder="PT. Graha Indo Setya" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-amber-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold mb-1 text-slate-300">Email Resmi *</label>
-                    <input type="email" id="reg_email" required placeholder="nama@perusahaan.co.id" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500">
+                    <label class="block text-xs font-bold mb-1 text-slate-700 dark:text-slate-300">Email Resmi *</label>
+                    <input type="email" id="reg_email" required placeholder="nama@perusahaan.co.id" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-amber-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold mb-1 text-slate-300">Nomor WhatsApp *</label>
-                    <input type="text" id="reg_phone" required placeholder="081234567890" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500">
+                    <label class="block text-xs font-bold mb-1 text-slate-700 dark:text-slate-300">Nomor WhatsApp *</label>
+                    <input type="text" id="reg_phone" required placeholder="081234567890" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-amber-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold mb-1 text-slate-300">Buat Kata Sandi *</label>
-                    <input type="password" id="reg_password" required placeholder="••••••••" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500">
+                    <label class="block text-xs font-bold mb-1 text-slate-700 dark:text-slate-300">Buat Kata Sandi *</label>
+                    <input type="password" id="reg_password" required placeholder="••••••••" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-amber-500">
                 </div>
                 <button type="submit" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs shadow-lg transition-all">Daftar Akun Baru & Lanjutkan</button>
             </form>
 
             <!-- Tombol Keluar Sesi -->
-            <div class="pt-2.5 border-t border-slate-800 text-center">
-                <button type="button" onclick="logoutClient()" class="text-xs text-red-400 hover:text-red-300 font-bold">Keluar Sesi Akun Saat Ini</button>
+            <div class="pt-2.5 border-t border-slate-300 dark:border-slate-800 text-center">
+                <button type="button" onclick="logoutClient()" class="text-xs text-red-500 hover:text-red-400 font-bold">Keluar Sesi Akun Saat Ini</button>
             </div>
         </div>
     </div>
